@@ -1,0 +1,2673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HMS_DB2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_Master_Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="100" />
+          <Property Name="Uid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Session" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="CDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="DFlag" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateTime" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_Company">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Uid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Session" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="CDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="DFlag" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateTime" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+          <Property Name="GSTIN" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMail" Type="nvarchar" MaxLength="50" />
+          <Property Name="StateId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Uid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Session" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="CDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="DFlag" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateTime" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_Doctor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DoctorName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Uid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Session" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="CDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="DFlag" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateTime" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_Frm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FrmName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+          <Property Name="GSTIN" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="StateCode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CategoryId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+          <Property Name="UnitId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Pack" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="MRP" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Disc" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Rate" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Reorder" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Tax" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="OpeningQty" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Batch" Type="nvarchar" MaxLength="50" />
+          <Property Name="Expiry" Type="nvarchar" MaxLength="50" />
+          <Property Name="PCSRate" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Uid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Session" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="CDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="DFlag" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateTime" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_ItemType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItemType" Type="nvarchar" MaxLength="100" />
+          <Property Name="Uid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Session" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="CDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="DFlag" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateTime" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="StateCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Uid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Session" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="CDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="DFlag" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateTime" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_Supplier">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+          <Property Name="GSTIN" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMail" Type="nvarchar" MaxLength="50" />
+          <Property Name="StateId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Uid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Session" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="CDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="DFlag" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateTime" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_Unit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="Uid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Session" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="CDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="DFlag" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateTime" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Uid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Session" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="CDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="DFlag" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateTime" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_MasterFirm">
+          <Key>
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FAddress" Type="nvarchar(max)" />
+          <Property Name="Contact" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="GSTN" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="StateCode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Purchase">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VN" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="InvoiceNo" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="InvoiceDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Supplierid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Narration" Type="nvarchar(max)" />
+          <Property Name="uid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Session" Type="nvarchar" MaxLength="50" />
+          <Property Name="DFlag" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Cdate" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Purchase_Detail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ItemId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pack" Type="nvarchar" MaxLength="50" />
+          <Property Name="Batch" Type="nvarchar" MaxLength="50" />
+          <Property Name="Expiry" Type="nvarchar" MaxLength="50" />
+          <Property Name="Qty" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="TotalQty" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="MRP" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Disc" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Rate" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="CGST" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="SGST" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="IGST" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="NetAmount" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="DFlag" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Tbl_Sale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VN" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustomerId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Doctor" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Narration" Type="nvarchar(max)" />
+          <Property Name="uid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Session" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dflag" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Cdate" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Sale_Detail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ItemId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pack" Type="nvarchar" MaxLength="50" />
+          <Property Name="Batch" Type="nvarchar" MaxLength="100" />
+          <Property Name="Expiry" Type="nvarchar" MaxLength="50" />
+          <Property Name="Qty" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="TotalQty" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="MRP" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="PCSRate" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Disc" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Rate" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="CGST" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="SGST" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="IGST" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="NetAmount" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Dflag" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Tbl_Temp_Purchase_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KeyId" Type="nvarchar(max)" />
+          <Property Name="ItemId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pack" Type="nvarchar" MaxLength="50" />
+          <Property Name="Batch" Type="nvarchar" MaxLength="50" />
+          <Property Name="Expiry" Type="nvarchar" MaxLength="50" />
+          <Property Name="Qty" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="TotalQty" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="MRP" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Disc" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Rate" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="CGST" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="SGST" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="IGST" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="NetAmount" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Edit" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="DeleteId" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Tbl_Temp_Sale_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KeyId" Type="nvarchar(max)" />
+          <Property Name="ItemId" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pack" Type="nvarchar" MaxLength="50" />
+          <Property Name="Batch" Type="nvarchar" MaxLength="100" />
+          <Property Name="Expiry" Type="nvarchar" MaxLength="50" />
+          <Property Name="Qty" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="TotalQty" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="MRP" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="PCSRate" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Disc" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Rate" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="CGST" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="SGST" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="IGST" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="NetAmount" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Edit" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="DeleteId" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <Function Name="Sp_Delete_Master_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_Master_Company" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_Master_Customer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_Master_Doctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_Master_Item" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_Master_ItemType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_Master_State" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_Master_Supplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_Master_Unit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_Master_User" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_Purchase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_PurchaseDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_Sale" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_SaleDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_TempPurchaseDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Delete_TempSaleDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Get_Master_Customer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_get_Master_Item" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_Get_Master_Supplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_get_Purchase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_get_Sale" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="Sp_get_Sale_Detail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="Sp_get_Sale_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Doctor" Type="numeric" Mode="In" />
+          <Parameter Name="Date1" Type="nvarchar" Mode="In" />
+          <Parameter Name="Date2" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_get_Sale_Report_Doctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Doctor" Type="numeric" Mode="In" />
+          <Parameter Name="Date1" Type="nvarchar" Mode="In" />
+          <Parameter Name="Date2" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_get_Sale1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Sp_get_Temp_Purchase_Detail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_get_Temp_PurchaseDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="KeyId" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="Sp_get_Temp_Sale_Detail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_get_Temp_SaleDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="KeyId" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="Sp_get_Total_sale_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="nvarchar" Mode="In" />
+          <Parameter Name="Date2" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_Insert_Master_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Category" Type="nvarchar" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ip" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_Insert_Master_Company" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Company" Type="nvarchar" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ip" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_Insert_Master_Customer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Customer" Type="nvarchar" Mode="In" />
+          <Parameter Name="Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact" Type="nvarchar" Mode="In" />
+          <Parameter Name="GSTIN" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="StateId" Type="numeric" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ip" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_Insert_Master_Doctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Doctor" Type="nvarchar" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ip" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_Insert_Master_Item" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CompanyId" Type="numeric" Mode="In" />
+          <Parameter Name="CategoryId" Type="numeric" Mode="In" />
+          <Parameter Name="ItemName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UnitId" Type="numeric" Mode="In" />
+          <Parameter Name="Pack" Type="numeric" Mode="In" />
+          <Parameter Name="MRP" Type="numeric" Mode="In" />
+          <Parameter Name="Disc" Type="numeric" Mode="In" />
+          <Parameter Name="Rate" Type="numeric" Mode="In" />
+          <Parameter Name="Reorder" Type="numeric" Mode="In" />
+          <Parameter Name="Tax" Type="numeric" Mode="In" />
+          <Parameter Name="OpeningQty" Type="numeric" Mode="In" />
+          <Parameter Name="Batch" Type="nvarchar" Mode="In" />
+          <Parameter Name="Expiry" Type="nvarchar" Mode="In" />
+          <Parameter Name="PCSRate" Type="numeric" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ip" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_Insert_Master_Itemtype" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ItemType" Type="nvarchar" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ip" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_Insert_Master_State" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="State" Type="nvarchar" Mode="In" />
+          <Parameter Name="StateCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ip" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_Insert_Master_Supplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Supplier" Type="nvarchar" Mode="In" />
+          <Parameter Name="Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact" Type="nvarchar" Mode="In" />
+          <Parameter Name="GSTIN" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="StateId" Type="numeric" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ip" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_Insert_Master_Unit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="unit" Type="nvarchar" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ip" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_Insert_Master_User" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="Status" Type="nvarchar" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="Ip" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_Insert_Purchase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="nvarchar" Mode="In" />
+          <Parameter Name="InvoiceNo" Type="numeric" Mode="In" />
+          <Parameter Name="InvoiceDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="SupplieId" Type="numeric" Mode="In" />
+          <Parameter Name="TotalAmount" Type="numeric" Mode="In" />
+          <Parameter Name="Narration" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+          <Parameter Name="id" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Insert_PurchaseDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Date" Type="nvarchar" Mode="In" />
+          <Parameter Name="KeyId" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Insert_Sale" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Date" Type="nvarchar" Mode="In" />
+          <Parameter Name="CustomerId" Type="numeric" Mode="In" />
+          <Parameter Name="Doctor" Type="numeric" Mode="In" />
+          <Parameter Name="TotalAmount" Type="numeric" Mode="In" />
+          <Parameter Name="Narration" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+          <Parameter Name="id" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Insert_Sale_Return" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VN" Type="numeric" Mode="In" />
+          <Parameter Name="Date" Type="nvarchar" Mode="In" />
+          <Parameter Name="CustomerId" Type="numeric" Mode="In" />
+          <Parameter Name="Doctor" Type="numeric" Mode="In" />
+          <Parameter Name="TotalAmount" Type="numeric" Mode="In" />
+          <Parameter Name="Narration" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+          <Parameter Name="id" Type="numeric" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Insert_SaleDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Date" Type="nvarchar" Mode="In" />
+          <Parameter Name="KeyId" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="Uid" Type="numeric" Mode="In" />
+          <Parameter Name="Session" Type="nvarchar" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Insert_TempPurchaseDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="KeyId" Type="nvarchar" Mode="In" />
+          <Parameter Name="ItemId" Type="numeric" Mode="In" />
+          <Parameter Name="Unit" Type="nvarchar" Mode="In" />
+          <Parameter Name="Pack" Type="nvarchar" Mode="In" />
+          <Parameter Name="Batch" Type="nvarchar" Mode="In" />
+          <Parameter Name="Expiry" Type="nvarchar" Mode="In" />
+          <Parameter Name="Qty" Type="numeric" Mode="In" />
+          <Parameter Name="TotalQty" Type="numeric" Mode="In" />
+          <Parameter Name="MRP" Type="numeric" Mode="In" />
+          <Parameter Name="Disc" Type="numeric" Mode="In" />
+          <Parameter Name="Rate" Type="numeric" Mode="In" />
+          <Parameter Name="Amount" Type="numeric" Mode="In" />
+          <Parameter Name="CGST" Type="numeric" Mode="In" />
+          <Parameter Name="SGST" Type="numeric" Mode="In" />
+          <Parameter Name="IGST" Type="numeric" Mode="In" />
+          <Parameter Name="NetAmount" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Insert_TempSaleDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="KeyId" Type="nvarchar" Mode="In" />
+          <Parameter Name="ItemId" Type="numeric" Mode="In" />
+          <Parameter Name="Unit" Type="nvarchar" Mode="In" />
+          <Parameter Name="Pack" Type="nvarchar" Mode="In" />
+          <Parameter Name="Batch" Type="nvarchar" Mode="In" />
+          <Parameter Name="Expiry" Type="nvarchar" Mode="In" />
+          <Parameter Name="Qty" Type="numeric" Mode="In" />
+          <Parameter Name="TotalQty" Type="numeric" Mode="In" />
+          <Parameter Name="MRP" Type="numeric" Mode="In" />
+          <Parameter Name="Disc" Type="numeric" Mode="In" />
+          <Parameter Name="Rate" Type="numeric" Mode="In" />
+          <Parameter Name="Amount" Type="numeric" Mode="In" />
+          <Parameter Name="CGST" Type="numeric" Mode="In" />
+          <Parameter Name="SGST" Type="numeric" Mode="In" />
+          <Parameter Name="IGST" Type="numeric" Mode="In" />
+          <Parameter Name="NetAmount" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Update_AllPurchaseDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="TempId" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Update_AllSaleDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="TempId" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Update_EditPurchaseDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="ItemId" Type="numeric" Mode="In" />
+          <Parameter Name="Unit" Type="nvarchar" Mode="In" />
+          <Parameter Name="Pack" Type="nvarchar" Mode="In" />
+          <Parameter Name="Batch" Type="nvarchar" Mode="In" />
+          <Parameter Name="Expiry" Type="nvarchar" Mode="In" />
+          <Parameter Name="Qty" Type="numeric" Mode="In" />
+          <Parameter Name="TotalQty" Type="numeric" Mode="In" />
+          <Parameter Name="MRP" Type="numeric" Mode="In" />
+          <Parameter Name="Disc" Type="numeric" Mode="In" />
+          <Parameter Name="Rate" Type="numeric" Mode="In" />
+          <Parameter Name="Amount" Type="numeric" Mode="In" />
+          <Parameter Name="CGST" Type="numeric" Mode="In" />
+          <Parameter Name="SGST" Type="numeric" Mode="In" />
+          <Parameter Name="IGST" Type="numeric" Mode="In" />
+          <Parameter Name="NetAmount" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Update_EditSaleDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="ItemId" Type="numeric" Mode="In" />
+          <Parameter Name="Unit" Type="nvarchar" Mode="In" />
+          <Parameter Name="Pack" Type="nvarchar" Mode="In" />
+          <Parameter Name="Batch" Type="nvarchar" Mode="In" />
+          <Parameter Name="Expiry" Type="nvarchar" Mode="In" />
+          <Parameter Name="Qty" Type="numeric" Mode="In" />
+          <Parameter Name="TotalQty" Type="numeric" Mode="In" />
+          <Parameter Name="MRP" Type="numeric" Mode="In" />
+          <Parameter Name="Disc" Type="numeric" Mode="In" />
+          <Parameter Name="Rate" Type="numeric" Mode="In" />
+          <Parameter Name="Amount" Type="numeric" Mode="In" />
+          <Parameter Name="CGST" Type="numeric" Mode="In" />
+          <Parameter Name="SGST" Type="numeric" Mode="In" />
+          <Parameter Name="IGST" Type="numeric" Mode="In" />
+          <Parameter Name="NetAmount" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Update_Master_Category" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Category" Type="nvarchar" Mode="In" />
+          <Parameter Name="UpdateBy" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="Sp_Update_Master_Company" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Company" Type="nvarchar" Mode="In" />
+          <Parameter Name="UpdateBy" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="Sp_Update_Master_Customer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Customer" Type="nvarchar" Mode="In" />
+          <Parameter Name="Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="GSTIN" Type="nvarchar" Mode="In" />
+          <Parameter Name="StateId" Type="numeric" Mode="In" />
+          <Parameter Name="UpdateBy" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="Sp_Update_Master_Doctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Doctor" Type="nvarchar" Mode="In" />
+          <Parameter Name="UpdateBy" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="Sp_Update_Master_Item" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="CompanyId" Type="numeric" Mode="In" />
+          <Parameter Name="CategoryId" Type="numeric" Mode="In" />
+          <Parameter Name="ItemName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UnitId" Type="numeric" Mode="In" />
+          <Parameter Name="Pack" Type="numeric" Mode="In" />
+          <Parameter Name="MRP" Type="numeric" Mode="In" />
+          <Parameter Name="Disc" Type="numeric" Mode="In" />
+          <Parameter Name="Rate" Type="numeric" Mode="In" />
+          <Parameter Name="Reorder" Type="numeric" Mode="In" />
+          <Parameter Name="Tax" Type="numeric" Mode="In" />
+          <Parameter Name="OpeningQty" Type="numeric" Mode="In" />
+          <Parameter Name="Batch" Type="nvarchar" Mode="In" />
+          <Parameter Name="Expiry" Type="nvarchar" Mode="In" />
+          <Parameter Name="PCSRate" Type="numeric" Mode="In" />
+          <Parameter Name="UpdateBy" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="Sp_Update_Master_ItemType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="ItemType" Type="nvarchar" Mode="In" />
+          <Parameter Name="UpdateBy" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="Sp_Update_Master_State" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="State" Type="nvarchar" Mode="In" />
+          <Parameter Name="StateCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="UpdateBy" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="Sp_Update_Master_Supplier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Supplier" Type="nvarchar" Mode="In" />
+          <Parameter Name="Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="Contact" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="GSTIN" Type="nvarchar" Mode="In" />
+          <Parameter Name="StateId" Type="numeric" Mode="In" />
+          <Parameter Name="UpdateBy" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="Sp_Update_Master_Unit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="Unit" Type="nvarchar" Mode="In" />
+          <Parameter Name="UpdateBy" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="Sp_Update_Master_User" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="Status" Type="nvarchar" Mode="In" />
+          <Parameter Name="UpdateBy" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="Sp_Update_Purchase" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="VN" Type="numeric" Mode="In" />
+          <Parameter Name="Date" Type="nvarchar" Mode="In" />
+          <Parameter Name="InvoiceNo" Type="numeric" Mode="In" />
+          <Parameter Name="InvoiceDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="SupplierId" Type="numeric" Mode="In" />
+          <Parameter Name="TotalAmount" Type="numeric" Mode="In" />
+          <Parameter Name="Narration" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="uid" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Update_PurchaseDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="KeyId" Type="nvarchar" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Update_Sale" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="VN" Type="numeric" Mode="In" />
+          <Parameter Name="Date" Type="nvarchar" Mode="In" />
+          <Parameter Name="CustomerId" Type="numeric" Mode="In" />
+          <Parameter Name="Doctor" Type="numeric" Mode="In" />
+          <Parameter Name="TotalAmount" Type="numeric" Mode="In" />
+          <Parameter Name="Narration" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="uid" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Update_SaleDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="KeyId" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="Sp_Update_TempPurchaseDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="KeyId" Type="nvarchar" Mode="In" />
+          <Parameter Name="ItemId" Type="numeric" Mode="In" />
+          <Parameter Name="Unit" Type="nvarchar" Mode="In" />
+          <Parameter Name="Pack" Type="nvarchar" Mode="In" />
+          <Parameter Name="Batch" Type="nvarchar" Mode="In" />
+          <Parameter Name="Expiry" Type="nvarchar" Mode="In" />
+          <Parameter Name="Qty" Type="numeric" Mode="In" />
+          <Parameter Name="TotalQty" Type="numeric" Mode="In" />
+          <Parameter Name="MRP" Type="numeric" Mode="In" />
+          <Parameter Name="Disc" Type="numeric" Mode="In" />
+          <Parameter Name="Rate" Type="numeric" Mode="In" />
+          <Parameter Name="Amount" Type="numeric" Mode="In" />
+          <Parameter Name="CGST" Type="numeric" Mode="In" />
+          <Parameter Name="SGST" Type="numeric" Mode="In" />
+          <Parameter Name="IGST" Type="numeric" Mode="In" />
+          <Parameter Name="NetAmount" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="Sp_Update_TempSaleDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="numeric" Mode="In" />
+          <Parameter Name="KeyId" Type="nvarchar" Mode="In" />
+          <Parameter Name="ItemId" Type="numeric" Mode="In" />
+          <Parameter Name="Unit" Type="nvarchar" Mode="In" />
+          <Parameter Name="Pack" Type="nvarchar" Mode="In" />
+          <Parameter Name="Batch" Type="nvarchar" Mode="In" />
+          <Parameter Name="Expiry" Type="nvarchar" Mode="In" />
+          <Parameter Name="Qty" Type="numeric" Mode="In" />
+          <Parameter Name="TotalQty" Type="numeric" Mode="In" />
+          <Parameter Name="MRP" Type="numeric" Mode="In" />
+          <Parameter Name="Disc" Type="numeric" Mode="In" />
+          <Parameter Name="Rate" Type="numeric" Mode="In" />
+          <Parameter Name="Amount" Type="numeric" Mode="In" />
+          <Parameter Name="CGST" Type="numeric" Mode="In" />
+          <Parameter Name="SGST" Type="numeric" Mode="In" />
+          <Parameter Name="IGST" Type="numeric" Mode="In" />
+          <Parameter Name="NetAmount" Type="numeric" Mode="In" />
+          <Parameter Name="msg" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="HMS_DB2ModelStoreContainer">
+          <EntitySet Name="Tbl_Master_Category" EntityType="Self.Tbl_Master_Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Master_Company" EntityType="Self.Tbl_Master_Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Master_Customer" EntityType="Self.Tbl_Master_Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Master_Doctor" EntityType="Self.Tbl_Master_Doctor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Master_Frm" EntityType="Self.Tbl_Master_Frm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Master_Item" EntityType="Self.Tbl_Master_Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Master_ItemType" EntityType="Self.Tbl_Master_ItemType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Master_State" EntityType="Self.Tbl_Master_State" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Master_Supplier" EntityType="Self.Tbl_Master_Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Master_Unit" EntityType="Self.Tbl_Master_Unit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Master_User" EntityType="Self.Tbl_Master_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_MasterFirm" EntityType="Self.Tbl_MasterFirm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Purchase" EntityType="Self.Tbl_Purchase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Purchase_Detail" EntityType="Self.Tbl_Purchase_Detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Sale" EntityType="Self.Tbl_Sale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Sale_Detail" EntityType="Self.Tbl_Sale_Detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Temp_Purchase_Details" EntityType="Self.Tbl_Temp_Purchase_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Temp_Sale_Details" EntityType="Self.Tbl_Temp_Sale_Details" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HMS_DB2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Master_Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Uid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Session" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DFlag" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_Company">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Uid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Session" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DFlag" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GSTIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StateId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Uid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Session" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DFlag" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_Doctor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DoctorName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Uid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Session" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DFlag" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_Frm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FrmName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GSTIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StateCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CategoryId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UnitId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Pack" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MRP" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Disc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Reorder" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Tax" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OpeningQty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Batch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Expiry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PCSRate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Uid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Session" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DFlag" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_ItemType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Uid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Session" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DFlag" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StateCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Uid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Session" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DFlag" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_Supplier">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GSTIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StateId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Uid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Session" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DFlag" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_Unit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Uid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Session" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DFlag" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Master_User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Uid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Session" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DFlag" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateBy" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="UpdateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Purchase">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VN" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceNo" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="InvoiceDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Supplierid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Narration" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="uid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Session" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DFlag" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Cdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Purchase_Detail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ItemId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pack" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Batch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Expiry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalQty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MRP" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Disc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CGST" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SGST" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IGST" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NetAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DFlag" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Tbl_Temp_Purchase_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KeyId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ItemId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pack" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Batch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Expiry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalQty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MRP" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Disc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CGST" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SGST" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IGST" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NetAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Edit" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DeleteId" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="HMS_DB2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Master_Category" EntityType="Self.Tbl_Master_Category" />
+          <EntitySet Name="Tbl_Master_Company" EntityType="Self.Tbl_Master_Company" />
+          <EntitySet Name="Tbl_Master_Customer" EntityType="Self.Tbl_Master_Customer" />
+          <EntitySet Name="Tbl_Master_Doctor" EntityType="Self.Tbl_Master_Doctor" />
+          <EntitySet Name="Tbl_Master_Frm" EntityType="Self.Tbl_Master_Frm" />
+          <EntitySet Name="Tbl_Master_Item" EntityType="Self.Tbl_Master_Item" />
+          <EntitySet Name="Tbl_Master_ItemType" EntityType="Self.Tbl_Master_ItemType" />
+          <EntitySet Name="Tbl_Master_State" EntityType="Self.Tbl_Master_State" />
+          <EntitySet Name="Tbl_Master_Supplier" EntityType="Self.Tbl_Master_Supplier" />
+          <EntitySet Name="Tbl_Master_Unit" EntityType="Self.Tbl_Master_Unit" />
+          <EntitySet Name="Tbl_Master_User" EntityType="Self.Tbl_Master_User" />
+          <EntitySet Name="Tbl_Purchase" EntityType="Self.Tbl_Purchase" />
+          <EntitySet Name="Tbl_Purchase_Detail" EntityType="Self.Tbl_Purchase_Detail" />
+          <EntitySet Name="Tbl_Temp_Purchase_Details" EntityType="Self.Tbl_Temp_Purchase_Details" />
+          <FunctionImport Name="Sp_Delete_Master_Category">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_Master_Company">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_Master_Customer">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_Master_Doctor">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_Master_Item">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_Master_ItemType">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_Master_State">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_Master_Supplier">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_Master_Unit">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_Master_User">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_Purchase">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_PurchaseDetails">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_TempPurchaseDetails">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Get_Master_Customer" ReturnType="Collection(HMS_DB2Model.Sp_Get_Master_Customer_Result)" />
+          <FunctionImport Name="Sp_get_Master_Item" ReturnType="Collection(HMS_DB2Model.Sp_get_Master_Item_Result)" />
+          <FunctionImport Name="Sp_Get_Master_Supplier" ReturnType="Collection(HMS_DB2Model.Sp_Get_Master_Supplier_Result)" />
+          <FunctionImport Name="Sp_get_Temp_Purchase_Detail" ReturnType="Collection(HMS_DB2Model.Sp_get_Temp_Purchase_Detail_Result)" />
+          <FunctionImport Name="sp_get_Temp_PurchaseDetail" ReturnType="Collection(HMS_DB2Model.sp_get_Temp_PurchaseDetail_Result)">
+          <Parameter Name="KeyId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_Master_Category">
+            <Parameter Name="Category" Mode="In" Type="String" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="Ip" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_Master_Company">
+            <Parameter Name="Company" Mode="In" Type="String" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="Ip" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_Master_Customer">
+            <Parameter Name="Customer" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="Contact" Mode="In" Type="String" />
+            <Parameter Name="GSTIN" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="StateId" Mode="In" Type="Decimal" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="Ip" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_Master_Doctor">
+            <Parameter Name="Doctor" Mode="In" Type="String" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="Ip" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_Master_Item">
+            <Parameter Name="CompanyId" Mode="In" Type="Decimal" />
+            <Parameter Name="CategoryId" Mode="In" Type="Decimal" />
+            <Parameter Name="ItemName" Mode="In" Type="String" />
+            <Parameter Name="UnitId" Mode="In" Type="Decimal" />
+            <Parameter Name="Pack" Mode="In" Type="Decimal" />
+            <Parameter Name="MRP" Mode="In" Type="Decimal" />
+            <Parameter Name="Disc" Mode="In" Type="Decimal" />
+            <Parameter Name="Rate" Mode="In" Type="Decimal" />
+            <Parameter Name="Reorder" Mode="In" Type="Decimal" />
+            <Parameter Name="Tax" Mode="In" Type="Decimal" />
+            <Parameter Name="OpeningQty" Mode="In" Type="Decimal" />
+            <Parameter Name="Batch" Mode="In" Type="String" />
+            <Parameter Name="Expiry" Mode="In" Type="String" />
+            <Parameter Name="PCSRate" Mode="In" Type="Decimal" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="Ip" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_Master_Itemtype">
+            <Parameter Name="ItemType" Mode="In" Type="String" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="Ip" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_Master_State">
+            <Parameter Name="State" Mode="In" Type="String" />
+            <Parameter Name="StateCode" Mode="In" Type="String" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="Ip" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_Master_Supplier">
+            <Parameter Name="Supplier" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="Contact" Mode="In" Type="String" />
+            <Parameter Name="GSTIN" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="StateId" Mode="In" Type="Decimal" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="Ip" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_Master_Unit">
+            <Parameter Name="unit" Mode="In" Type="String" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="Ip" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_Master_User">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="String" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="Ip" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_Purchase">
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="InvoiceNo" Mode="In" Type="Decimal" />
+            <Parameter Name="InvoiceDate" Mode="In" Type="String" />
+            <Parameter Name="SupplieId" Mode="In" Type="Decimal" />
+            <Parameter Name="TotalAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="Narration" Mode="In" Type="String" />
+            <Parameter Name="uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+            <Parameter Name="id" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_PurchaseDetails">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="KeyId" Mode="In" Type="String" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_TempPurchaseDetails">
+            <Parameter Name="KeyId" Mode="In" Type="String" />
+            <Parameter Name="ItemId" Mode="In" Type="Decimal" />
+            <Parameter Name="Unit" Mode="In" Type="String" />
+            <Parameter Name="Pack" Mode="In" Type="String" />
+            <Parameter Name="Batch" Mode="In" Type="String" />
+            <Parameter Name="Expiry" Mode="In" Type="String" />
+            <Parameter Name="Qty" Mode="In" Type="Decimal" />
+            <Parameter Name="TotalQty" Mode="In" Type="Decimal" />
+            <Parameter Name="MRP" Mode="In" Type="Decimal" />
+            <Parameter Name="Disc" Mode="In" Type="Decimal" />
+            <Parameter Name="Rate" Mode="In" Type="Decimal" />
+            <Parameter Name="Amount" Mode="In" Type="Decimal" />
+            <Parameter Name="CGST" Mode="In" Type="Decimal" />
+            <Parameter Name="SGST" Mode="In" Type="Decimal" />
+            <Parameter Name="IGST" Mode="In" Type="Decimal" />
+            <Parameter Name="NetAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_AllPurchaseDetails">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="TempId" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_Master_Category">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Category" Mode="In" Type="String" />
+            <Parameter Name="UpdateBy" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_Master_Company">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Company" Mode="In" Type="String" />
+            <Parameter Name="UpdateBy" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_Master_Customer">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Customer" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="Contact" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="GSTIN" Mode="In" Type="String" />
+            <Parameter Name="StateId" Mode="In" Type="Decimal" />
+            <Parameter Name="UpdateBy" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_Master_Doctor">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Doctor" Mode="In" Type="String" />
+            <Parameter Name="UpdateBy" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_Master_Item">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="CompanyId" Mode="In" Type="Decimal" />
+            <Parameter Name="CategoryId" Mode="In" Type="Decimal" />
+            <Parameter Name="ItemName" Mode="In" Type="String" />
+            <Parameter Name="UnitId" Mode="In" Type="Decimal" />
+            <Parameter Name="Pack" Mode="In" Type="Decimal" />
+            <Parameter Name="MRP" Mode="In" Type="Decimal" />
+            <Parameter Name="Disc" Mode="In" Type="Decimal" />
+            <Parameter Name="Rate" Mode="In" Type="Decimal" />
+            <Parameter Name="Reorder" Mode="In" Type="Decimal" />
+            <Parameter Name="Tax" Mode="In" Type="Decimal" />
+            <Parameter Name="OpeningQty" Mode="In" Type="Decimal" />
+            <Parameter Name="Batch" Mode="In" Type="String" />
+            <Parameter Name="Expiry" Mode="In" Type="String" />
+            <Parameter Name="PCSRate" Mode="In" Type="Decimal" />
+            <Parameter Name="UpdateBy" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_Master_ItemType">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="ItemType" Mode="In" Type="String" />
+            <Parameter Name="UpdateBy" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_Master_State">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="State" Mode="In" Type="String" />
+            <Parameter Name="StateCode" Mode="In" Type="String" />
+            <Parameter Name="UpdateBy" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_Master_Supplier">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Supplier" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="Contact" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="GSTIN" Mode="In" Type="String" />
+            <Parameter Name="StateId" Mode="In" Type="Decimal" />
+            <Parameter Name="UpdateBy" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_Master_Unit">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Unit" Mode="In" Type="String" />
+            <Parameter Name="UpdateBy" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_Master_User">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Status" Mode="In" Type="String" />
+            <Parameter Name="UpdateBy" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_Purchase">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="VN" Mode="In" Type="Decimal" />
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="InvoiceNo" Mode="In" Type="Decimal" />
+            <Parameter Name="InvoiceDate" Mode="In" Type="String" />
+            <Parameter Name="SupplierId" Mode="In" Type="Decimal" />
+            <Parameter Name="TotalAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="Narration" Mode="In" Type="String" />
+            <Parameter Name="uid" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_PurchaseDetails">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="KeyId" Mode="In" Type="String" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_TempPurchaseDetails">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="KeyId" Mode="In" Type="String" />
+            <Parameter Name="ItemId" Mode="In" Type="Decimal" />
+            <Parameter Name="Unit" Mode="In" Type="String" />
+            <Parameter Name="Pack" Mode="In" Type="String" />
+            <Parameter Name="Batch" Mode="In" Type="String" />
+            <Parameter Name="Expiry" Mode="In" Type="String" />
+            <Parameter Name="Qty" Mode="In" Type="Decimal" />
+            <Parameter Name="TotalQty" Mode="In" Type="Decimal" />
+            <Parameter Name="MRP" Mode="In" Type="Decimal" />
+            <Parameter Name="Disc" Mode="In" Type="Decimal" />
+            <Parameter Name="Rate" Mode="In" Type="Decimal" />
+            <Parameter Name="Amount" Mode="In" Type="Decimal" />
+            <Parameter Name="CGST" Mode="In" Type="Decimal" />
+            <Parameter Name="SGST" Mode="In" Type="Decimal" />
+            <Parameter Name="IGST" Mode="In" Type="Decimal" />
+            <Parameter Name="NetAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Tbl_MasterFirm" EntityType="HMS_DB2Model.Tbl_MasterFirm" />
+          <FunctionImport Name="Sp_get_Purchase" ReturnType="Collection(HMS_DB2Model.Sp_get_Purchase_Result)" />
+          <FunctionImport Name="Sp_Update_EditPurchaseDetails">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="ItemId" Mode="In" Type="Decimal" />
+            <Parameter Name="Unit" Mode="In" Type="String" />
+            <Parameter Name="Pack" Mode="In" Type="String" />
+            <Parameter Name="Batch" Mode="In" Type="String" />
+            <Parameter Name="Expiry" Mode="In" Type="String" />
+            <Parameter Name="Qty" Mode="In" Type="Decimal" />
+            <Parameter Name="TotalQty" Mode="In" Type="Decimal" />
+            <Parameter Name="MRP" Mode="In" Type="Decimal" />
+            <Parameter Name="Disc" Mode="In" Type="Decimal" />
+            <Parameter Name="Rate" Mode="In" Type="Decimal" />
+            <Parameter Name="Amount" Mode="In" Type="Decimal" />
+            <Parameter Name="CGST" Mode="In" Type="Decimal" />
+            <Parameter Name="SGST" Mode="In" Type="Decimal" />
+            <Parameter Name="IGST" Mode="In" Type="Decimal" />
+            <Parameter Name="NetAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Tbl_Sale" EntityType="HMS_DB2Model.Tbl_Sale" />
+          <EntitySet Name="Tbl_Sale_Detail" EntityType="HMS_DB2Model.Tbl_Sale_Detail" />
+          <EntitySet Name="Tbl_Temp_Sale_Details" EntityType="HMS_DB2Model.Tbl_Temp_Sale_Details" />
+          <FunctionImport Name="Sp_Delete_Sale">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_SaleDetails">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Delete_TempSaleDetails">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_get_Sale_Detail" ReturnType="Collection(HMS_DB2Model.Sp_get_Sale_Detail_Result)">
+          <Parameter Name="id" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_get_Sale_Report" ReturnType="Collection(HMS_DB2Model.Sp_get_Sale_Report_Result)">
+            <Parameter Name="Doctor" Mode="In" Type="Decimal" />
+            <Parameter Name="Date1" Mode="In" Type="String" />
+            <Parameter Name="Date2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_get_Sale_Report_Doctor" ReturnType="Collection(HMS_DB2Model.Sp_get_Sale_Report_Doctor_Result)">
+            <Parameter Name="Doctor" Mode="In" Type="Decimal" />
+            <Parameter Name="Date1" Mode="In" Type="String" />
+            <Parameter Name="Date2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_get_Temp_Sale_Detail" ReturnType="Collection(HMS_DB2Model.Sp_get_Temp_Sale_Detail_Result)" />
+          <FunctionImport Name="sp_get_Temp_SaleDetail" ReturnType="Collection(HMS_DB2Model.sp_get_Temp_SaleDetail_Result)">
+          <Parameter Name="KeyId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_get_Total_sale_Report" ReturnType="Collection(HMS_DB2Model.Sp_get_Total_sale_Report_Result)">
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="Date2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_Sale">
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="CustomerId" Mode="In" Type="Decimal" />
+            <Parameter Name="Doctor" Mode="In" Type="Decimal" />
+            <Parameter Name="TotalAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="Narration" Mode="In" Type="String" />
+            <Parameter Name="uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+            <Parameter Name="id" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_Sale_Return">
+            <Parameter Name="VN" Mode="In" Type="Decimal" />
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="CustomerId" Mode="In" Type="Decimal" />
+            <Parameter Name="Doctor" Mode="In" Type="Decimal" />
+            <Parameter Name="TotalAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="Narration" Mode="In" Type="String" />
+            <Parameter Name="uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+            <Parameter Name="id" Mode="InOut" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_SaleDetails">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="KeyId" Mode="In" Type="String" />
+            <Parameter Name="Uid" Mode="In" Type="Decimal" />
+            <Parameter Name="Session" Mode="In" Type="String" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Insert_TempSaleDetails">
+            <Parameter Name="KeyId" Mode="In" Type="String" />
+            <Parameter Name="ItemId" Mode="In" Type="Decimal" />
+            <Parameter Name="Unit" Mode="In" Type="String" />
+            <Parameter Name="Pack" Mode="In" Type="String" />
+            <Parameter Name="Batch" Mode="In" Type="String" />
+            <Parameter Name="Expiry" Mode="In" Type="String" />
+            <Parameter Name="Qty" Mode="In" Type="Decimal" />
+            <Parameter Name="TotalQty" Mode="In" Type="Decimal" />
+            <Parameter Name="MRP" Mode="In" Type="Decimal" />
+            <Parameter Name="Disc" Mode="In" Type="Decimal" />
+            <Parameter Name="Rate" Mode="In" Type="Decimal" />
+            <Parameter Name="Amount" Mode="In" Type="Decimal" />
+            <Parameter Name="CGST" Mode="In" Type="Decimal" />
+            <Parameter Name="SGST" Mode="In" Type="Decimal" />
+            <Parameter Name="IGST" Mode="In" Type="Decimal" />
+            <Parameter Name="NetAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_AllSaleDetails">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="TempId" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_EditSaleDetails">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="ItemId" Mode="In" Type="Decimal" />
+            <Parameter Name="Unit" Mode="In" Type="String" />
+            <Parameter Name="Pack" Mode="In" Type="String" />
+            <Parameter Name="Batch" Mode="In" Type="String" />
+            <Parameter Name="Expiry" Mode="In" Type="String" />
+            <Parameter Name="Qty" Mode="In" Type="Decimal" />
+            <Parameter Name="TotalQty" Mode="In" Type="Decimal" />
+            <Parameter Name="MRP" Mode="In" Type="Decimal" />
+            <Parameter Name="Disc" Mode="In" Type="Decimal" />
+            <Parameter Name="Rate" Mode="In" Type="Decimal" />
+            <Parameter Name="Amount" Mode="In" Type="Decimal" />
+            <Parameter Name="CGST" Mode="In" Type="Decimal" />
+            <Parameter Name="SGST" Mode="In" Type="Decimal" />
+            <Parameter Name="IGST" Mode="In" Type="Decimal" />
+            <Parameter Name="NetAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_Sale">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="VN" Mode="In" Type="Decimal" />
+            <Parameter Name="Date" Mode="In" Type="String" />
+            <Parameter Name="CustomerId" Mode="In" Type="Decimal" />
+            <Parameter Name="Doctor" Mode="In" Type="Decimal" />
+            <Parameter Name="TotalAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="Narration" Mode="In" Type="String" />
+            <Parameter Name="uid" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_SaleDetails">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="KeyId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_Update_TempSaleDetails">
+            <Parameter Name="Id" Mode="In" Type="Decimal" />
+            <Parameter Name="KeyId" Mode="In" Type="String" />
+            <Parameter Name="ItemId" Mode="In" Type="Decimal" />
+            <Parameter Name="Unit" Mode="In" Type="String" />
+            <Parameter Name="Pack" Mode="In" Type="String" />
+            <Parameter Name="Batch" Mode="In" Type="String" />
+            <Parameter Name="Expiry" Mode="In" Type="String" />
+            <Parameter Name="Qty" Mode="In" Type="Decimal" />
+            <Parameter Name="TotalQty" Mode="In" Type="Decimal" />
+            <Parameter Name="MRP" Mode="In" Type="Decimal" />
+            <Parameter Name="Disc" Mode="In" Type="Decimal" />
+            <Parameter Name="Rate" Mode="In" Type="Decimal" />
+            <Parameter Name="Amount" Mode="In" Type="Decimal" />
+            <Parameter Name="CGST" Mode="In" Type="Decimal" />
+            <Parameter Name="SGST" Mode="In" Type="Decimal" />
+            <Parameter Name="IGST" Mode="In" Type="Decimal" />
+            <Parameter Name="NetAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="msg" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_get_Sale" ReturnType="Collection(HMS_DB2Model.Sp_get_Sale_Result)">
+            <Parameter Name="id" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_get_Sale1" ReturnType="Collection(HMS_DB2Model.Sp_get_Sale1_Result)" />
+        </EntityContainer>
+        <ComplexType Name="Sp_Get_Master_Customer_Result">
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Contact" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EMail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="GSTIN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StateCode" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="StateId" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="DFlag" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="Sp_get_Master_Item_Result">
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="200" />
+          <Property Type="Decimal" Name="CompanyId" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Category" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="CategoryId" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="UnitId" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Pack" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="MRP" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Disc" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Rate" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Reorder" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Tax" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="OpeningQty" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Batch" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Expiry" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="PCSRate" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="DFlag" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="Sp_Get_Master_Supplier_Result">
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="SupplierName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Contact" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EMail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="GSTIN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StateCode" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="StateId" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="DFlag" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="Sp_get_Temp_Purchase_Detail_Result">
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="ItemId" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Category" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Pack" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Batch" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Expiry" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Qty" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="TotalQty" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="MRP" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Disc" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Rate" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="CGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="SGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="IGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="NetAmount" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="sp_get_Temp_PurchaseDetail_Result">
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="KeyId" Nullable="true" />
+          <Property Type="String" Name="Itemname" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Pack" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Batch" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Expiry" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Qty" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="TotalQty" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="MRP" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Disc" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Rate" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="CGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="SGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="IGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="NetAmount" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+        <EntityType Name="Tbl_MasterFirm">
+          <Key>
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Contact" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="GSTN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StateCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="Sp_get_Purchase_Result">
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="VN" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Date" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="InvoiceNo" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="InvoiceDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Suppliername" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Contact" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="GSTIN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StateCode" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Narration" Nullable="true" />
+          <Property Type="Decimal" Name="Supplierid" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="DFlag" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <EntityType Name="Tbl_Sale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VN" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Doctor" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Narration" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="uid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Session" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dflag" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Cdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Sale_Detail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ItemId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pack" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Batch" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Expiry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalQty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MRP" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PCSRate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Disc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CGST" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SGST" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IGST" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NetAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Dflag" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Tbl_Temp_Sale_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KeyId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ItemId" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pack" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Batch" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Expiry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalQty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MRP" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PCSRate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Disc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Rate" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CGST" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SGST" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="IGST" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NetAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Edit" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DeleteId" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <ComplexType Name="Sp_get_Sale_Detail_Result">
+          <Property Type="Decimal" Name="Sid" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Itemname" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Batch" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Expiry" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Category" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="Qty" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Rate" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Disc" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="CGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="SGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="IGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="NetAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Dflag" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="Sp_get_Sale_Report_Result">
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="VN" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Doctor" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Contact" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="GSTIN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StateCode" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="DoctorName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Narration" Nullable="true" />
+          <Property Type="Decimal" Name="CustomerId" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Dflag" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="Sp_get_Sale_Report_Doctor_Result">
+          <Property Type="String" Name="DoctorName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Date1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Date2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PDate" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Time" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="Sp_get_Temp_Sale_Detail_Result">
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="ItemId" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Category" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Pack" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Batch" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Expiry" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Qty" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="TotalQty" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="MRP" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="PCSRate" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Disc" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Rate" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="CGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="SGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="IGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="NetAmount" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="sp_get_Temp_SaleDetail_Result">
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="KeyId" Nullable="true" />
+          <Property Type="String" Name="Itemname" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Unit" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Pack" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Batch" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Expiry" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Qty" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="TotalQty" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="MRP" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Disc" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Rate" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="CGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="SGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="IGST" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="NetAmount" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="Sp_get_Total_sale_Report_Result">
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="VN" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Doctor" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Contact" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="GSTIN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StateCode" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="DoctorName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Narration" Nullable="true" />
+          <Property Type="Decimal" Name="CustomerId" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Sp_get_Sale_Result">
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="VN" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Doctor" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Contact" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="GSTIN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StateCode" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="DoctorName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Narration" Nullable="true" />
+          <Property Type="Decimal" Name="CustomerId" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Dflag" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Sp_get_Sale1_Result">
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="VN" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Doctor" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="Contact" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="GSTIN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StateCode" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="DoctorName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Narration" Nullable="true" />
+          <Property Type="Decimal" Name="CustomerId" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="Dflag" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Cdate" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HMS_DB2ModelStoreContainer" CdmEntityContainer="HMS_DB2Entities">
+          <EntitySetMapping Name="Tbl_Master_Category">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Master_Category">
+              <MappingFragment StoreEntitySet="Tbl_Master_Category">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CDate" ColumnName="CDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Master_Company">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Master_Company">
+              <MappingFragment StoreEntitySet="Tbl_Master_Company">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CDate" ColumnName="CDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Master_Customer">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Master_Customer">
+              <MappingFragment StoreEntitySet="Tbl_Master_Customer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="GSTIN" ColumnName="GSTIN" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CDate" ColumnName="CDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Master_Doctor">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Master_Doctor">
+              <MappingFragment StoreEntitySet="Tbl_Master_Doctor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CDate" ColumnName="CDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Master_Frm">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Master_Frm">
+              <MappingFragment StoreEntitySet="Tbl_Master_Frm">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FrmName" ColumnName="FrmName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="GSTIN" ColumnName="GSTIN" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Master_Item">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Master_Item">
+              <MappingFragment StoreEntitySet="Tbl_Master_Item">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="Pack" ColumnName="Pack" />
+                <ScalarProperty Name="MRP" ColumnName="MRP" />
+                <ScalarProperty Name="Disc" ColumnName="Disc" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Reorder" ColumnName="Reorder" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="OpeningQty" ColumnName="OpeningQty" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+                <ScalarProperty Name="PCSRate" ColumnName="PCSRate" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CDate" ColumnName="CDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Master_ItemType">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Master_ItemType">
+              <MappingFragment StoreEntitySet="Tbl_Master_ItemType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CDate" ColumnName="CDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Master_State">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Master_State">
+              <MappingFragment StoreEntitySet="Tbl_Master_State">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CDate" ColumnName="CDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Master_Supplier">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Master_Supplier">
+              <MappingFragment StoreEntitySet="Tbl_Master_Supplier">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="GSTIN" ColumnName="GSTIN" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CDate" ColumnName="CDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Master_Unit">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Master_Unit">
+              <MappingFragment StoreEntitySet="Tbl_Master_Unit">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CDate" ColumnName="CDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Master_User">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Master_User">
+              <MappingFragment StoreEntitySet="Tbl_Master_User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CDate" ColumnName="CDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Purchase">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Purchase">
+              <MappingFragment StoreEntitySet="Tbl_Purchase">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VN" ColumnName="VN" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="Supplierid" ColumnName="Supplierid" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Narration" ColumnName="Narration" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+                <ScalarProperty Name="Cdate" ColumnName="Cdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Purchase_Detail">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Purchase_Detail">
+              <MappingFragment StoreEntitySet="Tbl_Purchase_Detail">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PId" ColumnName="PId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Pack" ColumnName="Pack" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
+                <ScalarProperty Name="MRP" ColumnName="MRP" />
+                <ScalarProperty Name="Disc" ColumnName="Disc" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CGST" ColumnName="CGST" />
+                <ScalarProperty Name="SGST" ColumnName="SGST" />
+                <ScalarProperty Name="IGST" ColumnName="IGST" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Temp_Purchase_Details">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Temp_Purchase_Details">
+              <MappingFragment StoreEntitySet="Tbl_Temp_Purchase_Details">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KeyId" ColumnName="KeyId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Pack" ColumnName="Pack" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
+                <ScalarProperty Name="MRP" ColumnName="MRP" />
+                <ScalarProperty Name="Disc" ColumnName="Disc" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CGST" ColumnName="CGST" />
+                <ScalarProperty Name="SGST" ColumnName="SGST" />
+                <ScalarProperty Name="IGST" ColumnName="IGST" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+                <ScalarProperty Name="Edit" ColumnName="Edit" />
+                <ScalarProperty Name="DeleteId" ColumnName="DeleteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Delete_Master_Category" FunctionName="HMS_DB2Model.Store.Sp_Delete_Master_Category" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_Master_Company" FunctionName="HMS_DB2Model.Store.Sp_Delete_Master_Company" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_Master_Customer" FunctionName="HMS_DB2Model.Store.Sp_Delete_Master_Customer" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_Master_Doctor" FunctionName="HMS_DB2Model.Store.Sp_Delete_Master_Doctor" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_Master_Item" FunctionName="HMS_DB2Model.Store.Sp_Delete_Master_Item" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_Master_ItemType" FunctionName="HMS_DB2Model.Store.Sp_Delete_Master_ItemType" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_Master_State" FunctionName="HMS_DB2Model.Store.Sp_Delete_Master_State" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_Master_Supplier" FunctionName="HMS_DB2Model.Store.Sp_Delete_Master_Supplier" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_Master_Unit" FunctionName="HMS_DB2Model.Store.Sp_Delete_Master_Unit" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_Master_User" FunctionName="HMS_DB2Model.Store.Sp_Delete_Master_User" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_Purchase" FunctionName="HMS_DB2Model.Store.Sp_Delete_Purchase" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_PurchaseDetails" FunctionName="HMS_DB2Model.Store.Sp_Delete_PurchaseDetails" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_TempPurchaseDetails" FunctionName="HMS_DB2Model.Store.Sp_Delete_TempPurchaseDetails" />
+          <FunctionImportMapping FunctionImportName="Sp_Get_Master_Customer" FunctionName="HMS_DB2Model.Store.Sp_Get_Master_Customer">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMS_DB2Model.Sp_Get_Master_Customer_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="GSTIN" ColumnName="GSTIN" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_get_Master_Item" FunctionName="HMS_DB2Model.Store.Sp_get_Master_Item">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMS_DB2Model.Sp_get_Master_Item_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="Pack" ColumnName="Pack" />
+                <ScalarProperty Name="MRP" ColumnName="MRP" />
+                <ScalarProperty Name="Disc" ColumnName="Disc" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Reorder" ColumnName="Reorder" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="OpeningQty" ColumnName="OpeningQty" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+                <ScalarProperty Name="PCSRate" ColumnName="PCSRate" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Get_Master_Supplier" FunctionName="HMS_DB2Model.Store.Sp_Get_Master_Supplier">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMS_DB2Model.Sp_Get_Master_Supplier_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="GSTIN" ColumnName="GSTIN" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_get_Temp_Purchase_Detail" FunctionName="HMS_DB2Model.Store.Sp_get_Temp_Purchase_Detail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMS_DB2Model.Sp_get_Temp_Purchase_Detail_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Pack" ColumnName="Pack" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
+                <ScalarProperty Name="MRP" ColumnName="MRP" />
+                <ScalarProperty Name="Disc" ColumnName="Disc" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CGST" ColumnName="CGST" />
+                <ScalarProperty Name="SGST" ColumnName="SGST" />
+                <ScalarProperty Name="IGST" ColumnName="IGST" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_get_Temp_PurchaseDetail" FunctionName="HMS_DB2Model.Store.sp_get_Temp_PurchaseDetail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMS_DB2Model.sp_get_Temp_PurchaseDetail_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KeyId" ColumnName="KeyId" />
+                <ScalarProperty Name="Itemname" ColumnName="Itemname" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Pack" ColumnName="Pack" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
+                <ScalarProperty Name="MRP" ColumnName="MRP" />
+                <ScalarProperty Name="Disc" ColumnName="Disc" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CGST" ColumnName="CGST" />
+                <ScalarProperty Name="SGST" ColumnName="SGST" />
+                <ScalarProperty Name="IGST" ColumnName="IGST" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Insert_Master_Category" FunctionName="HMS_DB2Model.Store.Sp_Insert_Master_Category" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_Master_Company" FunctionName="HMS_DB2Model.Store.Sp_Insert_Master_Company" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_Master_Customer" FunctionName="HMS_DB2Model.Store.Sp_Insert_Master_Customer" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_Master_Doctor" FunctionName="HMS_DB2Model.Store.Sp_Insert_Master_Doctor" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_Master_Item" FunctionName="HMS_DB2Model.Store.Sp_Insert_Master_Item" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_Master_Itemtype" FunctionName="HMS_DB2Model.Store.Sp_Insert_Master_Itemtype" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_Master_State" FunctionName="HMS_DB2Model.Store.Sp_Insert_Master_State" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_Master_Supplier" FunctionName="HMS_DB2Model.Store.Sp_Insert_Master_Supplier" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_Master_Unit" FunctionName="HMS_DB2Model.Store.Sp_Insert_Master_Unit" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_Master_User" FunctionName="HMS_DB2Model.Store.Sp_Insert_Master_User" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_Purchase" FunctionName="HMS_DB2Model.Store.Sp_Insert_Purchase" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_PurchaseDetails" FunctionName="HMS_DB2Model.Store.Sp_Insert_PurchaseDetails" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_TempPurchaseDetails" FunctionName="HMS_DB2Model.Store.Sp_Insert_TempPurchaseDetails" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_AllPurchaseDetails" FunctionName="HMS_DB2Model.Store.Sp_Update_AllPurchaseDetails" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_Master_Category" FunctionName="HMS_DB2Model.Store.Sp_Update_Master_Category" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_Master_Company" FunctionName="HMS_DB2Model.Store.Sp_Update_Master_Company" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_Master_Customer" FunctionName="HMS_DB2Model.Store.Sp_Update_Master_Customer" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_Master_Doctor" FunctionName="HMS_DB2Model.Store.Sp_Update_Master_Doctor" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_Master_Item" FunctionName="HMS_DB2Model.Store.Sp_Update_Master_Item" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_Master_ItemType" FunctionName="HMS_DB2Model.Store.Sp_Update_Master_ItemType" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_Master_State" FunctionName="HMS_DB2Model.Store.Sp_Update_Master_State" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_Master_Supplier" FunctionName="HMS_DB2Model.Store.Sp_Update_Master_Supplier" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_Master_Unit" FunctionName="HMS_DB2Model.Store.Sp_Update_Master_Unit" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_Master_User" FunctionName="HMS_DB2Model.Store.Sp_Update_Master_User" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_Purchase" FunctionName="HMS_DB2Model.Store.Sp_Update_Purchase" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_PurchaseDetails" FunctionName="HMS_DB2Model.Store.Sp_Update_PurchaseDetails" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_TempPurchaseDetails" FunctionName="HMS_DB2Model.Store.Sp_Update_TempPurchaseDetails" />
+          <EntitySetMapping Name="Tbl_MasterFirm">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_MasterFirm">
+              <MappingFragment StoreEntitySet="Tbl_MasterFirm">
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="GSTN" ColumnName="GSTN" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="FAddress" ColumnName="FAddress" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="FID" ColumnName="FID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Sp_get_Purchase" FunctionName="HMS_DB2Model.Store.Sp_get_Purchase">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMS_DB2Model.Sp_get_Purchase_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VN" ColumnName="VN" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="Suppliername" ColumnName="Suppliername" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="GSTIN" ColumnName="GSTIN" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Narration" ColumnName="Narration" />
+                <ScalarProperty Name="Supplierid" ColumnName="Supplierid" />
+                <ScalarProperty Name="DFlag" ColumnName="DFlag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Update_EditPurchaseDetails" FunctionName="HMS_DB2Model.Store.Sp_Update_EditPurchaseDetails" />
+          <EntitySetMapping Name="Tbl_Sale">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Sale">
+              <MappingFragment StoreEntitySet="Tbl_Sale">
+                <ScalarProperty Name="Cdate" ColumnName="Cdate" />
+                <ScalarProperty Name="Dflag" ColumnName="Dflag" />
+                <ScalarProperty Name="Session" ColumnName="Session" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="Narration" ColumnName="Narration" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Doctor" ColumnName="Doctor" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="VN" ColumnName="VN" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Sale_Detail">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Sale_Detail">
+              <MappingFragment StoreEntitySet="Tbl_Sale_Detail">
+                <ScalarProperty Name="Dflag" ColumnName="Dflag" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+                <ScalarProperty Name="IGST" ColumnName="IGST" />
+                <ScalarProperty Name="SGST" ColumnName="SGST" />
+                <ScalarProperty Name="CGST" ColumnName="CGST" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Disc" ColumnName="Disc" />
+                <ScalarProperty Name="PCSRate" ColumnName="PCSRate" />
+                <ScalarProperty Name="MRP" ColumnName="MRP" />
+                <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Pack" ColumnName="Pack" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="SId" ColumnName="SId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Temp_Sale_Details">
+            <EntityTypeMapping TypeName="HMS_DB2Model.Tbl_Temp_Sale_Details">
+              <MappingFragment StoreEntitySet="Tbl_Temp_Sale_Details">
+                <ScalarProperty Name="DeleteId" ColumnName="DeleteId" />
+                <ScalarProperty Name="Edit" ColumnName="Edit" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+                <ScalarProperty Name="IGST" ColumnName="IGST" />
+                <ScalarProperty Name="SGST" ColumnName="SGST" />
+                <ScalarProperty Name="CGST" ColumnName="CGST" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Disc" ColumnName="Disc" />
+                <ScalarProperty Name="PCSRate" ColumnName="PCSRate" />
+                <ScalarProperty Name="MRP" ColumnName="MRP" />
+                <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Pack" ColumnName="Pack" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="KeyId" ColumnName="KeyId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Delete_Sale" FunctionName="HMS_DB2Model.Store.Sp_Delete_Sale" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_SaleDetails" FunctionName="HMS_DB2Model.Store.Sp_Delete_SaleDetails" />
+          <FunctionImportMapping FunctionImportName="Sp_Delete_TempSaleDetails" FunctionName="HMS_DB2Model.Store.Sp_Delete_TempSaleDetails" />
+          <FunctionImportMapping FunctionImportName="Sp_get_Sale_Detail" FunctionName="HMS_DB2Model.Store.Sp_get_Sale_Detail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMS_DB2Model.Sp_get_Sale_Detail_Result">
+                <ScalarProperty Name="Sid" ColumnName="Sid" />
+                <ScalarProperty Name="Itemname" ColumnName="Itemname" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Disc" ColumnName="Disc" />
+                <ScalarProperty Name="CGST" ColumnName="CGST" />
+                <ScalarProperty Name="SGST" ColumnName="SGST" />
+                <ScalarProperty Name="IGST" ColumnName="IGST" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+                <ScalarProperty Name="Dflag" ColumnName="Dflag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_get_Sale_Report" FunctionName="HMS_DB2Model.Store.Sp_get_Sale_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMS_DB2Model.Sp_get_Sale_Report_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VN" ColumnName="VN" />
+                <ScalarProperty Name="Doctor" ColumnName="Doctor" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="GSTIN" ColumnName="GSTIN" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="Narration" ColumnName="Narration" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Dflag" ColumnName="Dflag" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_get_Sale_Report_Doctor" FunctionName="HMS_DB2Model.Store.Sp_get_Sale_Report_Doctor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMS_DB2Model.Sp_get_Sale_Report_Doctor_Result">
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="Date1" ColumnName="Date1" />
+                <ScalarProperty Name="Date2" ColumnName="Date2" />
+                <ScalarProperty Name="PDate" ColumnName="PDate" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_get_Temp_Sale_Detail" FunctionName="HMS_DB2Model.Store.Sp_get_Temp_Sale_Detail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMS_DB2Model.Sp_get_Temp_Sale_Detail_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Pack" ColumnName="Pack" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
+                <ScalarProperty Name="MRP" ColumnName="MRP" />
+                <ScalarProperty Name="PCSRate" ColumnName="PCSRate" />
+                <ScalarProperty Name="Disc" ColumnName="Disc" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CGST" ColumnName="CGST" />
+                <ScalarProperty Name="SGST" ColumnName="SGST" />
+                <ScalarProperty Name="IGST" ColumnName="IGST" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_get_Temp_SaleDetail" FunctionName="HMS_DB2Model.Store.sp_get_Temp_SaleDetail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMS_DB2Model.sp_get_Temp_SaleDetail_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KeyId" ColumnName="KeyId" />
+                <ScalarProperty Name="Itemname" ColumnName="Itemname" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Pack" ColumnName="Pack" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Expiry" ColumnName="Expiry" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="TotalQty" ColumnName="TotalQty" />
+                <ScalarProperty Name="MRP" ColumnName="MRP" />
+                <ScalarProperty Name="Disc" ColumnName="Disc" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="CGST" ColumnName="CGST" />
+                <ScalarProperty Name="SGST" ColumnName="SGST" />
+                <ScalarProperty Name="IGST" ColumnName="IGST" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_get_Total_sale_Report" FunctionName="HMS_DB2Model.Store.Sp_get_Total_sale_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMS_DB2Model.Sp_get_Total_sale_Report_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VN" ColumnName="VN" />
+                <ScalarProperty Name="Doctor" ColumnName="Doctor" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="GSTIN" ColumnName="GSTIN" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="Narration" ColumnName="Narration" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_Insert_Sale" FunctionName="HMS_DB2Model.Store.Sp_Insert_Sale" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_Sale_Return" FunctionName="HMS_DB2Model.Store.Sp_Insert_Sale_Return" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_SaleDetails" FunctionName="HMS_DB2Model.Store.Sp_Insert_SaleDetails" />
+          <FunctionImportMapping FunctionImportName="Sp_Insert_TempSaleDetails" FunctionName="HMS_DB2Model.Store.Sp_Insert_TempSaleDetails" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_AllSaleDetails" FunctionName="HMS_DB2Model.Store.Sp_Update_AllSaleDetails" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_EditSaleDetails" FunctionName="HMS_DB2Model.Store.Sp_Update_EditSaleDetails" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_Sale" FunctionName="HMS_DB2Model.Store.Sp_Update_Sale" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_SaleDetails" FunctionName="HMS_DB2Model.Store.Sp_Update_SaleDetails" />
+          <FunctionImportMapping FunctionImportName="Sp_Update_TempSaleDetails" FunctionName="HMS_DB2Model.Store.Sp_Update_TempSaleDetails" />
+          <FunctionImportMapping FunctionImportName="Sp_get_Sale" FunctionName="HMS_DB2Model.Store.Sp_get_Sale">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMS_DB2Model.Sp_get_Sale_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VN" ColumnName="VN" />
+                <ScalarProperty Name="Doctor" ColumnName="Doctor" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="GSTIN" ColumnName="GSTIN" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="Narration" ColumnName="Narration" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Dflag" ColumnName="Dflag" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_get_Sale1" FunctionName="HMS_DB2Model.Store.Sp_get_Sale1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HMS_DB2Model.Sp_get_Sale1_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="VN" ColumnName="VN" />
+                <ScalarProperty Name="Doctor" ColumnName="Doctor" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="GSTIN" ColumnName="GSTIN" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+                <ScalarProperty Name="Narration" ColumnName="Narration" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Dflag" ColumnName="Dflag" />
+                <ScalarProperty Name="Cdate" ColumnName="Cdate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

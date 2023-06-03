@@ -1,0 +1,45 @@
+﻿
+@model HMS.Models.Purchase
+
+@{
+    ViewBag.Title = "MasterCategory";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+
+
+
+
+            <div class="row">
+                <div class=" card-info "
+                     style="background: blanchedalmond; padding-left: 1%; padding-right: 1%; padding-bottom: 1%">
+                    <div class=" heading" style="padding-top: 3%">
+                        <h1>Search Purchase</h1>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    @using (Html.BeginForm("SearchPurchase", "Purchase", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", id = "form" }))
+                    {
+                        @Html.HiddenFor(x => x.id)
+
+
+
+                    }
+
+                </div>
+                <div style="background: blanchedalmond">
+
+                    @{ Html.RenderAction("SearchPurchaseList", "Purchase");}
+                </div>
+
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+

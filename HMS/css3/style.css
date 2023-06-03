@@ -1,0 +1,82 @@
+.section{position:relative;height:100vh}.section .section-center{position:absolute;top:50%;left:0;right:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
+#booking {
+    font-family: pt sans,sans-serif;
+    background: url(https://img.freepik.com/free-photo/wooden-corridor-defocused_1203-1089.jpg?w=996&t=st=1682584978~exp=1682585578~hmac=1f0b41b4b3d80f17f279fbcff3bbec326ec89e3efc6a08c5ae2938a8c3ac37ab);
+    background-size: cover;
+    background-position: center
+}.booking-form{background:rgba(0,0,0,.7);padding:40px;border-radius:6px}.booking-form .form-group{position:relative;margin-bottom:20px}.booking-form .form-control{background-color:#fff;height:50px;color:#191a1e;border:none;font-size:16px;font-weight:400;-webkit-box-shadow:none;box-shadow:none;border-radius:40px;padding:0 25px}.booking-form .form-control::-webkit-input-placeholder{color:rgba(82,82,84,.4)}.booking-form .form-control:-ms-input-placeholder{color:rgba(82,82,84,.4)}.booking-form .form-control::placeholder{color:rgba(82,82,84,.4)}.booking-form input[type=date].form-control:invalid{color:rgba(82,82,84,.4)}.booking-form select.form-control{-webkit-appearance:none;-moz-appearance:none;appearance:none}.booking-form select.form-control+.select-arrow{position:absolute;right:10px;bottom:6px;width:32px;line-height:32px;height:32px;text-align:center;pointer-events:none;color:rgba(0,0,0,.3);font-size:14px}.booking-form select.form-control+.select-arrow:after{content:'\279C';display:block;-webkit-transform:rotate(90deg);transform:rotate(90deg)}.booking-form .form-label{display:block;margin-left:20px;margin-bottom:5px;font-weight:400;text-transform:uppercase;line-height:24px;height:24px;font-size:12px;color:#fff}.booking-form .form-checkbox input{position:absolute!important;margin-left:-9999px!important;visibility:hidden!important}.booking-form .form-checkbox label{position:relative;padding-top:4px;padding-left:30px;font-weight:400;color:#fff}.booking-form .form-checkbox label+label{margin-left:15px}.booking-form .form-checkbox input+span{position:absolute;left:2px;top:4px;width:20px;height:20px;background:#fff;border-radius:50%}.booking-form .form-checkbox input+span:after{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;background-color:#f23e3e;-webkit-transition:.2s all;transition:.2s all;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.booking-form .form-checkbox input:not(:checked)+span:after{opacity:0}.booking-form .form-checkbox input:checked+span:after{opacity:1;width:10px;height:10px}.booking-form .form-btn{margin-top:27px}.booking-form .submit-btn{color:#fff;background-color:#f23e3e;font-weight:400;height:50px;font-size:14px;border:none;width:100%;border-radius:40px;text-transform:uppercase;-webkit-transition:.2s all;transition:.2s all;margin-top:3px}.booking-form .submit-btn:hover,.booking-form .submit-btn:focus{opacity:.9}
+.heading {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-top: -24%;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    opacity: 0.65;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.heading1 {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-top: -5%;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    opacity: 0.65;
+    text-shadow: 2px 2px 4px #000000;
+    background-color: none;
+}
+.booking-form .submit-btn1 {
+    color: #fff;
+    background-color: #299b0cf5;
+    margin-top: 12%;
+    font-weight: 400;
+    height: 50px;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    border-radius: 40px;
+    text-transform: uppercase;
+    -webkit-transition: .2s all;
+    transition: .2s all
+}
+.booking-form .submit-btn3 {
+    color: #fff;
+    background-color: #299b0cf5;
+    margin-top: 20%;
+    font-weight: 400;
+    height: 50px;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    border-radius: 40px;
+    text-transform: uppercase;
+    -webkit-transition: .2s all;
+    transition: .2s all
+}
+@media (max-width: 750px) {
+    .heading {
+        width: 350px;
+    }
+}
+.booking-form .form-group1 {
+    position: relative;
+    margin-bottom: 20px;
+    margin-left:5px;
+}
+.booking-form .form-group2 {
+    position: relative;
+    margin-bottom: 6px;
+    margin-left: 5px;
+}
+.booking-form-item {
+    background: rgba(0,0,0,.7);
+    padding: 40px;
+    border-radius: 6px;
+    position: absolute
+}

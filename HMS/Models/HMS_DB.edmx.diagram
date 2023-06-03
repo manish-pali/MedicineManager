@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9a246973d68147f981f6c270986dfaf4" Name="Diagram1">
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Master_Category" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Master_Company" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Master_Customer" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Master_Doctor" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Master_Frm" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Master_Item" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Master_ItemType" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Master_State" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Master_Supplier" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Master_Unit" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Master_User" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Purchase" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Purchase_Detail" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Temp_Purchase_Details" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_MasterFirm" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Sale" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Sale_Detail" Width="1.5" PointX="13.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HMS_DB2Model.Tbl_Temp_Sale_Details" Width="1.5" PointX="13.75" PointY="10.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

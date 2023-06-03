@@ -1,0 +1,611 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A41EF9CF-41B3-462C-9E46-C773828F3F45}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HMS</RootNamespace>
+    <AssemblyName>HMS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44397</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="css1\style.css" />
+    <Content Include="css2\StyleSheet1.css" />
+    <Content Include="css3\bootstrap.min.css" />
+    <Content Include="css3\style.css" />
+    <Content Include="css\accordions.css" />
+    <Content Include="css\alerts.css" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\buttons.css" />
+    <Content Include="css\c3\c3.min.css" />
+    <Content Include="css\calendar\fullcalendar.min.css" />
+    <Content Include="css\calendar\fullcalendar.print.min.css" />
+    <Content Include="css\chosen\bootstrap-chosen.css" />
+    <Content Include="css\chosen\chosen-sprite.png" />
+    <Content Include="css\code-editor\ambiance.css" />
+    <Content Include="css\code-editor\codemirror.css" />
+    <Content Include="css\colorpicker\colorpicker.css" />
+    <Content Include="css\cropper\cropper.min.css" />
+    <Content Include="css\data-table\bootstrap-editable.css" />
+    <Content Include="css\data-table\bootstrap-table.css" />
+    <Content Include="css\datapicker\datepicker3.css" />
+    <Content Include="css\dropzone\dropzone.css" />
+    <Content Include="css\duallistbox\bootstrap-duallistbox.min.css" />
+    <Content Include="css\editor\bootstrap-editable.css" />
+    <Content Include="css\editor\datetimepicker.css" />
+    <Content Include="css\editor\select2.css" />
+    <Content Include="css\editor\x-editor-style.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\form\all-type-forms.css" />
+    <Content Include="css\form\themesaller-forms.css" />
+    <Content Include="css\ionRangeSlider\ion.rangeSlider.css" />
+    <Content Include="css\ionRangeSlider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="css\ionRangeSlider\sprite-skin-flat.png" />
+    <Content Include="css\main.css" />
+    <Content Include="css\meanmenu.min.css" />
+    <Content Include="css\metisMenu\metisMenu-vertical.css" />
+    <Content Include="css\metisMenu\metisMenu.min.css" />
+    <Content Include="css\modals.css" />
+    <Content Include="css\morrisjs\morris.css" />
+    <Content Include="css\nalika-icon.css" />
+    <Content Include="css\normalize.css" />
+    <Content Include="css\notifications\Lobibox.min.css" />
+    <Content Include="css\notifications\notifications.css" />
+    <Content Include="css\owl.carousel.css" />
+    <Content Include="css\owl.theme.css" />
+    <Content Include="css\owl.transitions.css" />
+    <Content Include="css\preloader\preloader-style.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\scrollbar\jquery.mCustomScrollbar.min.css" />
+    <Content Include="css\select2\select2.min.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\StyleSheet1.css" />
+    <Content Include="css\summernote\summernote.css" />
+    <Content Include="css\tabs.css" />
+    <Content Include="css\touchspin\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="css\tree-viewer\32px.png" />
+    <Content Include="css\tree-viewer\throbber.gif" />
+    <Content Include="css\tree-viewer\tree-viewer.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\nalika.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="img\background.jpg" />
+    <Content Include="img\blog-details\1.jpg" />
+    <Content Include="img\contact\1.jpg" />
+    <Content Include="img\contact\2.jpg" />
+    <Content Include="img\contact\3.jpg" />
+    <Content Include="img\contact\4.jpg" />
+    <Content Include="img\cropper\1.jpg" />
+    <Content Include="img\favicon.ico" />
+    <Content Include="img\green1.png" />
+    <Content Include="img\logo\logosn.png" />
+    <Content Include="img\new-product\5-small.jpg" />
+    <Content Include="img\new-product\5.png" />
+    <Content Include="img\new-product\6-small.jpg" />
+    <Content Include="img\new-product\7-small.jpg" />
+    <Content Include="img\notification\4.jpg" />
+    <Content Include="img\notification\5.jpg" />
+    <Content Include="img\notification\6.jpg" />
+    <Content Include="img\product\1.jpg" />
+    <Content Include="img\product\2.jpg" />
+    <Content Include="img\product\3.jpg" />
+    <Content Include="img\product\bg-1.jpg" />
+    <Content Include="img\product\bg-2.jpg" />
+    <Content Include="img\product\bg-3.jpg" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\c3-charts\c3-active.js" />
+    <Content Include="js\c3-charts\c3.min.js" />
+    <Content Include="js\c3-charts\d3.min.js" />
+    <Content Include="js\calendar\fullcalendar-active.js" />
+    <Content Include="js\calendar\fullcalendar.min.js" />
+    <Content Include="js\calendar\moment.min.js" />
+    <Content Include="js\card.js" />
+    <Content Include="js\charts\area-chart.js" />
+    <Content Include="js\charts\bar-chart.js" />
+    <Content Include="js\charts\Chart.js" />
+    <Content Include="js\charts\line-chart.js" />
+    <Content Include="js\charts\rounded-chart.js" />
+    <Content Include="js\chart\jquery.peity.min.js" />
+    <Content Include="js\chart\peity-active.js" />
+    <Content Include="js\chosen\chosen-active.js" />
+    <Content Include="js\chosen\chosen.jquery.js" />
+    <Content Include="js\code-editor\code-editor-active.js" />
+    <Content Include="js\code-editor\code-editor.js" />
+    <Content Include="js\code-editor\codemirror.js" />
+    <Content Include="js\colorpicker\color-picker-active.js" />
+    <Content Include="js\colorpicker\jquery.spectrum.min.js" />
+    <Content Include="js\counterup\counterup-active.js" />
+    <Content Include="js\counterup\jquery.counterup.min.js" />
+    <Content Include="js\counterup\waypoints.min.js" />
+    <Content Include="js\cropper\cropper-actice.js" />
+    <Content Include="js\cropper\cropper.min.js" />
+    <Content Include="js\data-map\d3.min.js" />
+    <Content Include="js\data-map\data-maps-active.js" />
+    <Content Include="js\data-map\datamaps.all.min.js" />
+    <Content Include="js\data-map\topojson.js" />
+    <Content Include="js\data-table\bootstrap-editable.js" />
+    <Content Include="js\data-table\bootstrap-table-editable.js" />
+    <Content Include="js\data-table\bootstrap-table-export.js" />
+    <Content Include="js\data-table\bootstrap-table-resizable.js" />
+    <Content Include="js\data-table\bootstrap-table.js" />
+    <Content Include="js\data-table\colResizable-1.5.source.js" />
+    <Content Include="js\data-table\data-table-active.js" />
+    <Content Include="js\data-table\tableExport.js" />
+    <Content Include="js\datapicker\bootstrap-datepicker.js" />
+    <Content Include="js\datapicker\datepicker-active.js" />
+    <Content Include="js\dropzone\dropzone.js" />
+    <Content Include="js\duallistbox\duallistbox.active.js" />
+    <Content Include="js\duallistbox\jquery.bootstrap-duallistbox.js" />
+    <Content Include="js\e-payment.js" />
+    <Content Include="js\editable\bootstrap-datetimepicker.js" />
+    <Content Include="js\editable\bootstrap-editable.js" />
+    <Content Include="js\editable\jquery.mockjax.js" />
+    <Content Include="js\editable\mock-active.js" />
+    <Content Include="js\editable\moment.min.js" />
+    <Content Include="js\editable\select2.js" />
+    <Content Include="js\editable\xediable-active.js" />
+    <Content Include="js\flot\curvedLines.js" />
+    <Content Include="js\flot\flot-active.js" />
+    <Content Include="js\flot\jquery.flot.js" />
+    <Content Include="js\flot\jquery.flot.orderBars.js" />
+    <Content Include="js\flot\jquery.flot.pie.js" />
+    <Content Include="js\flot\jquery.flot.resize.js" />
+    <Content Include="js\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="js\google.maps\google.maps-active.js" />
+    <Content Include="js\icheck\icheck-active.js" />
+    <Content Include="js\icheck\icheck.min.js" />
+    <Content Include="js\input-mask\jasny-bootstrap.min.js" />
+    <Content Include="js\ionRangeSlider\ion.rangeSlider.active.js" />
+    <Content Include="js\ionRangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="js\jquery-price-slider.js" />
+    <Content Include="js\jquery.meanmenu.js" />
+    <Content Include="js\jquery.payform.min.js" />
+    <Content Include="js\jquery.scrollUp.min.js" />
+    <Content Include="js\jquery.sticky.js" />
+    <Content Include="js\knob\jquery.knob.js" />
+    <Content Include="js\knob\knob-active.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\metisMenu\metisMenu-active.js" />
+    <Content Include="js\metisMenu\metisMenu.min.js" />
+    <Content Include="js\notifications\Lobibox.js" />
+    <Content Include="js\notifications\notification-active.js" />
+    <Content Include="js\owl.carousel.min.js" />
+    <Content Include="js\password-meter\password-meter-active.js" />
+    <Content Include="js\password-meter\pwstrength-bootstrap.min.js" />
+    <Content Include="js\password-meter\zxcvbn.js" />
+    <Content Include="js\pdf\jquery.media.js" />
+    <Content Include="js\pdf\pdf-active.js" />
+    <Content Include="js\peity\jquery.peity.min.js" />
+    <Content Include="js\peity\peity-active.js" />
+    <Content Include="js\plugins.js" />
+    <Content Include="js\rangle-slider\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="js\rangle-slider\jquery-ui-touch-punch.min.js" />
+    <Content Include="js\rangle-slider\rangle-active.js" />
+    <Content Include="js\scrollbar\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="js\scrollbar\mCustomScrollbar-active.js" />
+    <Content Include="js\select2\select2-active.js" />
+    <Content Include="js\select2\select2.full.min.js" />
+    <Content Include="js\sparkline\jquery.charts-sparkline.js" />
+    <Content Include="js\sparkline\jquery.sparkline.min.js" />
+    <Content Include="js\sparkline\sparkline-active.js" />
+    <Content Include="js\summernote\summernote-active.js" />
+    <Content Include="js\summernote\summernote.min.js" />
+    <Content Include="js\tab.js" />
+    <Content Include="js\touchspin\jquery.bootstrap-touchspin.min.js" />
+    <Content Include="js\touchspin\touchspin-active.js" />
+    <Content Include="js\tree-line\jstree.active.js" />
+    <Content Include="js\tree-line\jstree.min.js" />
+    <Content Include="js\vendor\jquery-1.12.4.min.js" />
+    <Content Include="js\vendor\modernizr-2.8.3.min.js" />
+    <Content Include="js\wizard\jquery.steps.js" />
+    <Content Include="js\wizard\steps-active.js" />
+    <Content Include="js\wow.min.js" />
+    <Content Include="Models\HMS_DB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HMS_DB.edmx</DependentUpon>
+      <LastGenOutput>HMS_DB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\HMS_DB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HMS_DB.edmx</DependentUpon>
+      <LastGenOutput>HMS_DB.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\HMS_DB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HMS_DB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\HMS_DB.edmx.diagram">
+      <DependentUpon>HMS_DB.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MasterController.cs" />
+    <Compile Include="Controllers\PurchaseController.cs" />
+    <Compile Include="Controllers\SaleController.cs" />
+    <Compile Include="CustomClass\ADSSAntiBot.cs" />
+    <Compile Include="CustomClass\CustomClasses.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HMS_DB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMS_DB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HMS_DB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HMS_DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMS_DB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MasterCategory.cs" />
+    <Compile Include="Models\MasterCompany.cs" />
+    <Compile Include="Models\MasterCustomer.cs" />
+    <Compile Include="Models\MasterDoctor.cs" />
+    <Compile Include="Models\MasterItem.cs" />
+    <Compile Include="Models\MasterItemType.cs" />
+    <Compile Include="Models\MasterState.cs" />
+    <Compile Include="Models\MasterSupplier.cs" />
+    <Compile Include="Models\MasterUnit.cs" />
+    <Compile Include="Models\MasterUser.cs" />
+    <Compile Include="Models\Method.cs" />
+    <Compile Include="Models\Purchase.cs" />
+    <Compile Include="Models\Sale.cs" />
+    <Compile Include="Models\Sp_Get_Master_Customer_Result.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sp_get_Master_Item_Result.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sp_Get_Master_Supplier_Result.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sp_get_Purchase_Result.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sp_get_Sale1_Result.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sp_get_Sale_Detail_Result.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sp_get_Sale_Report_Doctor_Result.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sp_get_Sale_Report_Result.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sp_get_Sale_Result.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_get_Temp_PurchaseDetail_Result.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sp_get_Temp_Purchase_Detail_Result.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_get_Temp_SaleDetail_Result.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sp_get_Temp_Sale_Detail_Result.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sp_get_Total_sale_Report_Result.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_MasterFirm.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Master_Category.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Master_Company.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Master_Customer.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Master_Doctor.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Master_Frm.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Master_Item.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Master_ItemType.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Master_State.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Master_Supplier.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Master_Unit.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Master_User.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Purchase.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Purchase_Detail.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Sale.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Sale_Detail.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Temp_Purchase_Details.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Temp_Sale_Details.cs">
+      <DependentUpon>HMS_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User_Login.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="captcha.ashx" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="css\summernote\fonts\summernote.eot" />
+    <Content Include="css\summernote\fonts\summernote.ttf" />
+    <Content Include="css\summernote\fonts\summernote.woff" />
+    <Content Include="fonts\fontawesome-webfont-1.eot" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular-1.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\nalika.ttf" />
+    <Content Include="fonts\nalika.woff" />
+    <None Include="packages.config" />
+    <Content Include="Views\Home\UserLogin.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Dashboard.cshtml" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Views\Master\Category.cshtml" />
+    <Content Include="Views\Master\CategoryList.cshtml" />
+    <Content Include="Views\Master\ItemType.cshtml" />
+    <Content Include="Views\Master\ItemTypeList.cshtml" />
+    <Content Include="Views\Master\Unit.cshtml" />
+    <Content Include="Views\Master\Unitlist.cshtml" />
+    <Content Include="Views\Master\Doctor.cshtml" />
+    <Content Include="Views\Master\DoctorList.cshtml" />
+    <Content Include="Views\Master\Company.cshtml" />
+    <Content Include="Views\Master\CompanyList.cshtml" />
+    <Content Include="Views\Master\State.cshtml" />
+    <Content Include="Views\Master\StateList.cshtml" />
+    <Content Include="Views\Master\CustomerList.cshtml" />
+    <Content Include="Views\Master\Customer.cshtml" />
+    <Content Include="Views\Master\User.cshtml" />
+    <Content Include="Views\Master\UserList.cshtml" />
+    <Content Include="Views\Master\Supplier.cshtml" />
+    <Content Include="Views\Master\SupplierList.cshtml" />
+    <Content Include="Views\Master\Item.cshtml" />
+    <Content Include="Views\Master\ItemList.cshtml" />
+    <Content Include="Views\Purchase\Purchase.cshtml" />
+    <Content Include="Views\Purchase\PurchaseDetailsList.cshtml" />
+    <Content Include="Views\Purchase\SearchPurchase.cshtml" />
+    <Content Include="Views\Purchase\SearchPurchaseList.cshtml" />
+    <Content Include="Views\Sale\Sale.cshtml" />
+    <Content Include="Views\Sale\SaleDetailsList.cshtml" />
+    <Content Include="Views\Sale\SearchSale.cshtml" />
+    <Content Include="Views\Sale\SearchSaleList.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="img\App_LocalResources\" />
+    <Folder Include="Log\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51688</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44397/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

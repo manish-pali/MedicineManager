@@ -1,0 +1,810 @@
+﻿@model HMS.Models.Sale
+@{
+    ViewBag.Title = "TransactionDetails";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<style>
+    .date {
+        width: 49%;
+    }
+
+    .time {
+        width: 49%;
+        margin-left: 51%;
+        margin-top: -7%;
+    }
+
+    .gender {
+        margin-top: 12%;
+    }
+
+    .heading1 {
+        padding: -3px 10px;
+        background-color: lightcyan;
+        border: 1px solid lightcyan;
+        margin-bottom: 8px;
+        color: black;
+    }
+
+    .button {
+        margin-top: 14%;
+    }
+
+    #ItemTable .table-responsive {
+        max-height: 89px;
+    }
+</style>
+
+<div class="content-wrapper">
+    <!-- Main content -->
+    <title>HMS-Sale</title>
+    <section class="content">
+        <div class="container-fluid">
+
+
+
+
+            <div class="row">
+                <div class="card card-info "  style="background: blanchedalmond; padding-left: 1%; padding-right:1%;padding-bottom:1%">
+                    <div class=" heading" style=" padding-top: 3%">
+                        <div class="form-group row">
+                            <div class="col-sm-1">
+                                <h1>Sale</h1>
+                            </div>
+                            <div class="col-sm-1">
+                                <a class="btn btn-block btn-success" href="@Url.Action("Sale","Sale", new { id = 0 } )" style="margin-left: 1038%; width: 190%;">
+                                    Refresh
+                                </a>
+
+                            </div>
+                            <div class="col-sm-6">
+                                <a class="btn btn-primary btn-sm" href="@Url.Action("SearchSale","Sale")" style="width: 154px; margin-left: 145%">
+                                    Search
+                                </a>
+                            </div>
+                        </div>
+                        @*<button type="button" id="Addbtn" class="btn btn-sm btn-block btn-success" style="margin-top:-3%;margin-left:96%;width:auto">List</button>*@
+                        <!--<a class="btn btn-primary btn-sm" style="margin-left:92%;margin-top:-5%;width:7%" href="@Url.Action("SearchTransactionDetails","Transaction")">
+                                List
+                            </a>
+                        </div>-->
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        @using (Html.BeginForm("Sale", "Sale", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", id = "form" }))
+                        {
+                            @Html.HiddenFor(x => x.id)
+                            @Html.HiddenFor(x => x.KeyID)
+                            @Html.HiddenFor(x => x.ItemId)
+                            @Html.HiddenFor(x => x.IsGenerateSlip)
+                            @*<div>
+                                    <h1 style="margin-left:38%">Transaction Details</h1>
+                                </div>*@
+                            <div class="card-body mt-4">
+
+
+
+
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">VN</label>
+                                    <div class="col-sm-4">
+
+                                        @Html.EditorFor(model => model.VN, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.VN, "", new { @class = "text-danger" })
+                                    </div>
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Customer Name</label>
+                                    <div class="col-sm-4">
+
+                                        @Html.DropDownListFor(model => model.CustomerId, HMS.Models.Method.GetMasterCustomer(), "Select Customer Name ", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
+                                    </div>
+
+
+
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Date</label>
+                                    <div class="col-sm-4">
+
+                                        @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control", @type = "date" } })
+                                        @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                                    </div>
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Address</label>
+                                    <div class="col-sm-4">
+
+                                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Doctor</label>
+                                    <div class="col-sm-4">
+                                        @Html.DropDownListFor(model => model.Doctor, HMS.Models.Method.GetDoctor(), "Select Company ", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Doctor, "", new { @class = "text-danger" })
+                                    </div>
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Contact No</label>
+                                    <div class="col-sm-4">
+
+                                        @Html.EditorFor(model => model.Contact, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.Contact, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">GSTN</label>
+                                    <div class="col-sm-4">
+
+                                        @Html.EditorFor(model => model.gstn, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.gstn, "", new { @class = "text-danger" })
+                                    </div>
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">State Code</label>
+                                    <div class="col-sm-4">
+
+                                        @Html.EditorFor(model => model.Statecode, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.Statecode, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+
+                                <div>
+                                    <hr style="width: 100%; border-block-color: unset; " />
+                                </div>
+
+
+                                <div class="row form-group">
+                                    <div class="col-sm-3">
+                                        <label for="SupplierName" class="form-label">
+                                            Item Name
+                                            <span id="ErrorItem" class="text-danger" style="display:none">* </span>
+                                        </label>
+                                        @Html.DropDownListFor(model => model.ItemId1, HMS.Models.Method.GetMasterItem(), "Select Item Name", new { @class = "form-control form-control-sm" })
+                                        @Html.ValidationMessageFor(model => model.ItemId1, "", new { @class = "text-danger" })
+
+
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        <label for="Age" class="form-label">
+                                            Company
+                                            <span id="ErrorCompany" class="text-danger" style="display:none">* </span>
+                                        </label>
+
+                                        @Html.EditorFor(model => model.Company, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.Company, "", new { @class = "text-danger" })
+                                        @*<label for="Age" class="form-label">Age</label>*@
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label for="Age" class="form-label">
+                                            Category
+                                            <span id="ErrorCategory" class="text-danger" style="display:none">* </span>
+                                        </label>
+
+                                        @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                                        @*<label for="Age" class="form-label">Age</label>*@
+                                    </div>
+
+
+                                    <div class="col-sm-2">
+                                        <label for="Age" class="form-label">
+                                            Unit
+                                            <span id="ErrorUnit" class="text-danger" style="display:none">* </span>
+                                        </label>
+
+                                        @Html.EditorFor(model => model.Unit, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.Unit, "", new { @class = "text-danger" })
+                                        @*<label for="Age" class="form-label">Age</label>*@
+                                    </div>
+
+                                    <div class="col-sm-1">
+                                        <label for="Age" class="form-label">
+                                            Pack
+                                            <span id="ErrorPack" class="text-danger" style="display:none">* </span>
+                                        </label>
+
+                                        @Html.EditorFor(model => model.Pack, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.Pack, "", new { @class = "text-danger" })
+                                        @*<label for="Age" class="form-label">Age</label>*@
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="row form-group">
+                                    <div class="col-sm-1">
+                                        <label for="Age" class="form-label">
+                                            Batch
+                                            <span id="ErrorBatch" class="text-danger" style="display:none">* </span>
+                                        </label>
+
+                                        @Html.EditorFor(model => model.Batch, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm"} })
+                                        @Html.ValidationMessageFor(model => model.Batch, "", new { @class = "text-danger" })
+
+
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label for="SupplierName" class="form-label">
+                                            Expiry Date
+                                        </label>
+                                        @Html.EditorFor(model => model.Expiry, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm" } })
+                                        @Html.ValidationMessageFor(model => model.Expiry, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label for="RegistrationDate" class="form-label">
+                                            QTY
+                                            <span id="ErrorQty" class="text-danger" style="display:none">* </span>
+                                        </label>
+                                        @Html.EditorFor(model => model.qty, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm" } })
+                                        @Html.ValidationMessageFor(model => model.qty, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-sm-1" style="display:none">
+                                        <label for="RegistrationDate" class="form-label">
+                                            Total QTY
+                                            <span id="ErrorQty" class="text-danger" style="display:none">* </span>
+                                        </label>
+                                        @Html.EditorFor(model => model.Totalqty, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.Totalqty, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label for="Age" class="form-label">
+                                            MRP
+                                            <span id="ErrorMRP" class="text-danger" style="display:none">* </span>
+                                        </label>
+
+                                        @Html.EditorFor(model => model.MRP, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm" } })
+                                        @Html.ValidationMessageFor(model => model.MRP, "", new { @class = "text-danger" })
+                                        @*<label for="Age" class="form-label">Age</label>*@
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label for="Age" class="form-label">
+                                            PCSRate
+                                            <span id="ErrorMRP" class="text-danger" style="display:none">* </span>
+                                        </label>
+
+                                        @Html.EditorFor(model => model.PCSRate, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm"} })
+                                        @Html.ValidationMessageFor(model => model.PCSRate, "", new { @class = "text-danger" })
+                                        @*<label for="Age" class="form-label">Age</label>*@
+                                    </div>
+
+                                    <div class="col-sm-1">
+                                        <label for="Age" class="form-label">
+                                            Disc(%)
+                                            <span id="ErrorDisc" class="text-danger" style="display:none">* </span>
+                                        </label>
+
+                                        @Html.EditorFor(model => model.Discper, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", } })
+                                        @Html.ValidationMessageFor(model => model.Discper, "", new { @class = "text-danger" })
+                                        @*<label for="Age" class="form-label">Age</label>*@
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label for="City" class="form-label">Rate</label>
+
+                                        @Html.EditorFor(model => model.Rate, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.Rate, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label for="Pincode" class="form-label">Amount</label>
+
+                                        @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", onkeypress = "return isNumberKey(event)", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label for="State" class="form-label">CGST</label>
+                                        @Html.EditorFor(model => model.CGST, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", onkeypress = "return isNumberKey(event)" } })
+                                        @Html.ValidationMessageFor(model => model.CGST, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label for="State" class="form-label">SGST</label>
+                                        @Html.EditorFor(model => model.SGST, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", onkeypress = "return isNumberKey(event)" } })
+                                        @Html.ValidationMessageFor(model => model.SGST, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label for="State" class="form-label">IGST</label>
+                                        @Html.EditorFor(model => model.IGST, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", onkeypress = "return isNumberKey(event)" } })
+                                        @Html.ValidationMessageFor(model => model.IGST, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-sm-1" style="display:none">
+                                        <label for="State" class="form-label">IGST</label>
+                                        @Html.EditorFor(model => model.IGST1, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", onkeypress = "return isNumberKey(event)", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.IGST1, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label for="State" class="form-label">Net Amt</label>
+                                        @Html.EditorFor(model => model.NetAmount, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", onkeypress = "return isNumberKey(event)", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.NetAmount, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-sm-1" style="margin-left: 91.5%">
+                                        <button type="button" id="Addbtn" class="btn btn-sm btn-block btn-success">Add</button>
+                                    </div>
+                                </div>
+                                <div id="ItemTable">
+                                    @{ Html.RenderAction("SaleDetailsList", "Sale", new { KeyID = Model.KeyID });}
+
+                                </div>
+
+                                <div>
+                                    <hr style="width: 100%; border-block-color: unset; " />
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col-sm-10">
+                                        <label for="ReciptNo" class="form-label">Remark</label>
+
+                                        @Html.EditorFor(model => model.Narration, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", } })
+                                        @Html.ValidationMessageFor(model => model.Narration, "", new { @class = "text-danger" })
+
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="ReciptNo" class="form-label">Total Amount</label>
+
+                                        @Html.EditorFor(model => model.TotalAmount, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", @readonly = "true" } })
+                                        @Html.ValidationMessageFor(model => model.TotalAmount, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                                <div class="row form-group" style="display:none">
+                                    <div class="col-sm-1">
+                                        <label for="ReciptNo" class="form-label">Remark</label>
+
+                                        @Html.EditorFor(model => model.calcu, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", } })
+                                        @Html.ValidationMessageFor(model => model.calcu, "", new { @class = "text-danger" })
+
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label for="ReciptNo" class="form-label">Remark</label>
+
+                                        @Html.EditorFor(model => model.SGST1, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", } })
+                                        @Html.ValidationMessageFor(model => model.SGST1, "", new { @class = "text-danger" })
+
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <label for="ReciptNo" class="form-label">Remark</label>
+
+                                        @Html.EditorFor(model => model.Tax, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control form-control-sm", } })
+                                        @Html.ValidationMessageFor(model => model.Tax, "", new { @class = "text-danger" })
+
+                                    </div>
+                                    <div class="col-sm-6" style="display:none">
+
+                                        @Html.EditorFor(model => model.Session, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control", @placeholder = "Enter Category Name" } })
+                                        @Html.ValidationMessageFor(model => model.Session, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-sm-6" style="display:none">
+
+                                        @Html.EditorFor(model => model.uid, new { htmlAttributes = new { @autocomplete = "off", @class = "form-control", @placeholder = "Enter Category Name" } })
+                                        @Html.ValidationMessageFor(model => model.uid, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="inputPassword3" class="col-sm-2 "></label>
+
+                                    <div class="col-sm-2">
+                                        <button type="submit" id="btn1" class="btn btn-block btn-success" style="margin-left: 464%">
+                                            Submit
+                                        </button>
+
+                                    </div>
+
+
+                                    <div class="col-sm-3" style="display:flex;align-items:center">
+                                        <span style="color:forestgreen;font-weight:bold">@TempData["Message"]</span>
+                                        <span style="color:red;font-weight:bold">@TempData["ErrorMessage"]</span>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        }
+
+                    </div>
+
+
+
+
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+@*@{ Html.RenderAction("IPD", "Transaction");}*@
+
+
+@section MyScripts{
+    <script>
+        document.getElementById("Addbtn").addEventListener("click", AddItem);
+        document.getElementById("ItemId1").addEventListener("change", FetchRate);
+        document.getElementById("ItemId1").addEventListener("change", FetchRate1);
+        document.getElementById("Batch").addEventListener("change", FetchBatch);
+        document.getElementById("CustomerId").addEventListener("change", FetchCustomer);
+
+
+
+        document.getElementById("Discper").addEventListener("blur", calc);
+        document.getElementById("Discper").addEventListener("blur", calc1);
+        //document.getElementById("Discper").addEventListener("blur", calcCGST);
+        //document.getElementById("Discper").addEventListener("blur", calcSGST);
+        //document.getElementById("Discper").addEventListener("blur", calcIGST);
+        document.getElementById("CGST").addEventListener("blur", calcCGST);
+        document.getElementById("SGST").addEventListener("blur", calcSGST);
+        document.getElementById("IGST").addEventListener("blur", calcIGST);
+
+
+        document.getElementById("qty").addEventListener("blur", calc);
+        document.getElementById("qty").addEventListener("blur", calc1);
+        //document.getElementById("qty").addEventListener("blur", calcCGST);
+        //document.getElementById("qty").addEventListener("blur", calcSGST);
+        //document.getElementById("qty").addEventListener("blur", calcIGST);
+
+        function AddItem() {
+
+            //if (ValidateInput())
+            // {
+                   fetch('@Url.Action("SaveItem", "Sale")', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*'
+                },
+                body: new FormData(document.getElementById("form"))
+            }).then(res => res.json())
+                       .then(res => {
+                           ClearInput();
+                           RenderTable();
+                           tablefocus();
+
+                }).catch(error => {
+
+                    console.log(error);
+                });
+          ///*  //*/}
+
+        }
+
+        function FetchRate() {
+            let id = document.getElementById("ItemId1").value;
+            fetch(`/Sale/GetCode?id=${id}`).then(response => response.json())
+                .then(result => {
+                    console.log(result.CategoryChangeable);
+
+                    document.getElementById("Company").value = result.ComapnayName;
+                    document.getElementById("Category").value = result.categoryname;
+                    document.getElementById("Unit").value = result.Unit;
+                    document.getElementById("Pack").value = result.Pack;
+                    document.getElementById("Tax").value = result.Tax;
+
+                    //var Tax1 = parseFloat(document.getElementById("Tax").value);
+                    //var divided = Tax1 / 2;
+                    //if (document.getElementById("SGST1").value == 1) {
+                    //    document.getElementById("CGST").value = divided;
+                    //    document.getElementById("SGST").value = divided;
+                    //    document.getElementById("IGST").value = 0;
+
+                    //}
+                    //else {
+                    //    document.getElementById("CGST").value = 0;
+                    //    document.getElementById("SGST").value = 0;
+                    //    document.getElementById("IGST").value = result.Tax;
+
+                    //}
+
+                }
+                ).catch(error => console.log(error));
+
+
+        }
+
+        function FetchRate1() {
+            let id = document.getElementById("ItemId1").value;
+
+
+            fetch(`/Sale/GetBatchItem?id=${id}`).then(response => response.json())
+                .then(result => {
+                    let data = document.getElementById("Batch");
+                    data.innerHTML = "";
+                    data.appendChild(GetDropDownDefaultOption("Select Batch"));
+                    for (var i of result) {
+                        let option = document.createElement("option");
+                        option.value = i.Text;
+                        option.innerText = i.Value;
+                        data.appendChild(option);
+                    }
+                    if (cid) {
+                        data.value = cid;
+                    }
+                }
+                ).catch(error => console.log(error));
+
+        }
+        function GetDropDownDefaultOption(optionTxt) {
+            let doption = document.createElement("option");
+            doption.innerText = optionTxt
+            doption.value = "";
+            return doption;
+        }
+
+
+
+        function FetchBatch() {
+            let id = document.getElementById("Batch").value;
+            fetch(`/Sale/GetBatch?id=${id}`).then(response => response.json())
+                .then(result => {
+                    console.log(result.CategoryChangeable);
+
+                    document.getElementById("Expiry").value = result.Expiry;
+                    document.getElementById("MRP").value = result.MRP;
+                    document.getElementById("PCSRate").value = result.PCSRate;
+
+                }
+                ).catch(error => console.log(error));
+        }
+
+        function FetchCustomer() {
+            let id = document.getElementById("CustomerId").value;
+            fetch(`/Sale/GetCustomer?id=${id}`).then(response => response.json())
+                .then(result => {
+                    console.log(result.CategoryChangeable);
+                    document.getElementById("Address").value = result.Address;
+                    document.getElementById("Contact").value = result.Contact;
+                    document.getElementById("gstn").value = result.GSTIN;
+                    document.getElementById("Statecode").value = result.StateCode;
+
+                    var firm = document.getElementById("calcu").value;
+                    if (result.StateCode == firm) {
+                        document.getElementById("SGST1").value = 1;
+
+                    }
+                    else {
+                        document.getElementById("SGST1").value = 2;
+                    }
+                }
+                ).catch(error => console.log(error));
+        }
+
+        function RenderTable() {
+            let id = document.getElementById("KeyID").value;
+            fetch(`/Sale/SaleDetailsList?KeyID=${id}`).then(response => response.text())
+                .then(result => {
+
+                    document.getElementById("ItemTable").innerHTML = "";
+                    document.getElementById("ItemTable").innerHTML = result;
+                    document.getElementById("TotalAmount").value = document.getElementById("GrandAmount").value;
+                }
+            ).catch(error => console.log(error));
+
+
+        }
+
+        function ClearInput() {
+            document.getElementById("ItemId1").value = "";
+            document.getElementById("Category").value = "";
+            document.getElementById("Company").value = "";
+            document.getElementById("Unit").value = "";
+            document.getElementById("Pack").value = "";
+            document.getElementById("Batch").value = "";
+            document.getElementById("qty").value = 0;
+            document.getElementById("MRP").value = 0;
+            document.getElementById("Discper").value = 0;
+            document.getElementById("Rate").value = 0;
+            document.getElementById("Amount").value = 0;
+            document.getElementById("CGST").value = 0;
+            document.getElementById("SGST").value = 0;
+            document.getElementById("IGST").value = 0;
+            document.getElementById("IGST1").value = "";
+            document.getElementById("NetAmount").value = 0;
+            if(document.getElementById("NetAmount").value == 0) {
+                document.getElementById("Addbtn").style.display = "none";
+            }
+            else {
+                document.getElementById("Addbtn").style.display = "block";
+            }
+        }
+
+        function calc() {
+            var MRP = parseFloat(document.getElementById("PCSRate").value);
+            var Disc = parseFloat(document.getElementById("Discper").value);
+            var discper = MRP * Disc;
+            var Discount = discper / 100;
+            var Rate1 = MRP - Discount;
+
+            document.getElementById("Rate").value = Rate1;
+            if(document.getElementById("NetAmount").value == 0) {
+                document.getElementById("Addbtn").style.display = "none";
+            }
+            else {
+                document.getElementById("Addbtn").style.display = "block";
+            }
+        }
+
+        function calcCGST() {
+            var Amount = document.getElementById("Amount").value;
+            var CGST = document.getElementById("CGST").value;
+            var discper = Amount * CGST;
+            var Discount = discper / 100;
+
+
+            var Rate = - Amount - Discount;
+
+            document.getElementById("NetAmount").value = -Rate;
+
+
+        }
+
+        function calcSGST() {
+            var Amount = document.getElementById("Amount").value;
+            var SGST = document.getElementById("SGST").value;
+            var NetAmount = document.getElementById("NetAmount").value;
+            var discper = Amount * SGST;
+            var Discount = discper / 100;
+
+
+            var Rate = - NetAmount - Discount;
+
+            document.getElementById("NetAmount").value = -Rate;
+        }
+
+        function calcIGST() {
+            var Amount = document.getElementById("Amount").value;
+            var IGST = document.getElementById("IGST").value;
+            var NetAmount = document.getElementById("NetAmount").value;
+            var discper = Amount * IGST;
+            var Discount = discper / 100;
+
+
+            var Rate = - NetAmount - Discount;
+
+            document.getElementById("NetAmount").value = -Rate;
+
+
+        }
+
+        function calc1() {
+            var MRP = document.getElementById("Rate").value;
+            var qty = document.getElementById("qty").value;
+            var pack = document.getElementById("Pack").value;
+            var totalqty = qty * pack;
+            var amt = MRP * qty;
+            document.getElementById("Totalqty").value = totalqty;
+            document.getElementById("Amount").value = amt;
+            document.getElementById("NetAmount").value = amt;
+        }
+
+        function EditItem(id) {
+            fetch(`/Sale/GetEditItem?id=${id}`).then(response => response.json())
+                .then(result => {
+                    console.table(result);
+
+                    document.getElementById("ItemId1").value = result.ItemId;
+                    document.getElementById("Company").value = result.CompanyName;
+                    document.getElementById("Category").value = result.Category;
+                    document.getElementById("Unit").value = result.Unit;
+                    document.getElementById("Pack").value = result.Pack;
+                    FetchRate1();
+                    //document.getElementById("Batch").value = result.Batch;
+                    document.getElementById("Expiry").value = result.Expiry;
+                    document.getElementById("qty").value = result.Qty;
+                    document.getElementById("MRP").value = result.MRP;
+                    document.getElementById("PCSRate").value = result.PCSRate;
+                    document.getElementById("Discper").value = result.Disc;
+                    document.getElementById("Rate").value = result.Rate;
+                    document.getElementById("Amount").value = result.Amount;
+                    document.getElementById("CGST").value = result.CGST;
+                    document.getElementById("SGST").value = result.SGST;
+                    document.getElementById("IGST").value = result.IGST;
+                    document.getElementById("IGST1").value = result.Id;
+                    document.getElementById("NetAmount").value = result.NetAmount;
+
+                }
+                ).catch(error => console.log(error));
+        }
+
+        function DeleteItem(id) {
+            fetch(`/Sale/DeleteSaleDetails?id=${id}`).then(response => response.json())
+
+                .then(res => {
+                    RenderTable();
+                }
+                ).catch(error => console.log(error));
+        }
+
+        //function ValidateInput() {
+        //    let status = false;
+        //    let ItemStatus = false;
+        //    let BatchStatus = false;
+        //    let QtyStatus = false;
+        //    let MRPStatus = false;
+
+        //    if (document.getElementById("ItemId1").value) {
+        //        document.getElementById("ErrorItem").style.display = "none";
+        //        CategoryIdStatus = true;
+
+        //        document.getElementById("ItemId1").classList.remove("redborder");
+
+
+        //    } else {
+        //        document.getElementById("ErrorItem").style.display = "inline";
+
+        //        document.getElementById("ItemId1").classList.add("redborder");
+
+        //    }
+
+        //    if (document.getElementById("Batch").value) {
+        //        document.getElementById("ErrorBatch").style.display = "none";
+        //        CValuesIdStatus = true;
+
+        //        document.getElementById("Batch").classList.remove("redborder");
+
+        //    } else {
+        //        document.getElementById("ErrorBatch").style.display = "inline";
+
+        //        document.getElementById("Batch").classList.add("redborder");
+
+        //    }
+
+        //    if (document.getElementById("qty").value) {
+        //        document.getElementById("ErrorQty").style.display = "none";
+        //        RateStatus = true;
+
+        //        document.getElementById("qty").classList.remove("redborder");
+
+
+        //    } else {
+
+        //        document.getElementById("ErrorQty").style.display = "inline";
+
+        //        document.getElementById("qty").classList.add("redborder");
+
+        //    }
+        //    if (document.getElementById("MRP").value) {
+        //        document.getElementById("ErrorMRP").style.display = "none";
+        //        QtyStatus = true;
+
+        //        document.getElementById("MRP").classList.remove("redborder");
+
+        //    } else {
+        //        document.getElementById("ErrorMRP").style.display = "inline";
+
+        //        document.getElementById("MRP").classList.add("redborder");
+
+        //    }
+
+
+        //    if (ItemStatus && BatchStatus && QtyStatus && MRPStatus && DisAmtStatus) {
+        //        status = true;
+        //    }
+
+        //    return status;
+        //}
+
+    </script>
+
+    <script>
+            $('#form').submit(function () {
+                if ($("#form").valid()) {
+                    $(":submit").attr("disabled", true);
+                    $("#IsGenerateSlip").val(confirm('Do you want slip'));
+                    return true;
+                }
+                return false;
+            });
+
+            @if (Session["Filename"]!=null)
+        {
+            <text>
+            window.open('@Session["Filename"]', '_blank');
+            </text>
+                {
+                    Session["Filename"] = null;
+                }
+            }
+
+
+    </script>
+}

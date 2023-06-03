@@ -1,0 +1,100 @@
+﻿@model List<HMS.Models.sp_get_Temp_PurchaseDetail_Result>
+@{
+    int i = 0;
+    Layout = null;
+}
+@if (Model != null && Model.Count() > 0)
+{
+    <input type="hidden" id="GrandAmount" value="@Model.Sum(x=>x.NetAmount)" />
+
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="table-responsive">
+            <table class="table table-sm table-striped table-bordered first">
+                <thead>
+                    <tr>
+                        <th>Sr.No.</th>
+                        <th>Item Name</th>
+                        <th>Unit</th>
+                        <th>Pack</th>
+                        <th>Batch</th>
+                        <th>Expiry</th>
+                        <th>QTY</th>
+                        <th>MRP</th>
+                        <th>Disc</th>
+                        <th>Rate</th>
+                        <th>Amount</th>
+                        <th>CGST</th>
+                        <th>SGST</th>
+                        <th>IGST</th>
+                        <th>Net Amount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @(i=i+1)
+                            </td>
+                            <td>
+                                @item.Itemname
+                            </td>
+                            <td>
+                                @item.Unit
+                            </td>
+                            <td>
+                                @item.Pack
+                            </td>
+                            <td>
+                                @item.Batch
+                            </td>
+                            <td>
+                                @item.Expiry
+                            </td>
+                            <td>
+                                @item.Qty
+                            </td>
+                            <td>
+                                @item.MRP
+                            </td>
+                            <td>
+                                @item.Disc
+                            </td>
+                            <td>
+                                @item.Rate
+                            </td>
+                            <td>
+                                @item.Amount
+                            </td>
+                            <td>
+                                @item.CGST
+                            </td>
+                            <td>
+                                @item.SGST
+                            </td>
+                            <td>
+                                @item.IGST
+                            </td>
+                            <td>
+                                @item.NetAmount
+                            </td>
+                            <td>
+                                <button type="button" id="EditBtn" class="btn btn-primary btn-sm" onclick="EditItem('@item.Id')">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button type="button" id="DeleteBtn" class="btn btn-primary btn-sm btn-danger" onclick="DeleteItem('@item.Id')">
+
+                                    <i class="fas fa-trash"></i>
+                                </button>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+}
+
