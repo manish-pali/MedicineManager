@@ -17,15 +17,6 @@
                 @Html.TextBoxFor(model => model.username, new { @class = "form-control", required = "Required", @placeholder = "Username" })
 
                 @Html.TextBoxFor(model => model.password, new { @class = "form-control", required = "Required", @placeholder = "Password", @type = "password" })
-
-                <div class="form-group" id="partial">
-                    <img src="~/captcha.ashx" height="30px" width="200px" alt="capcha image" />
-                </div>
-                <div class="form-group">
-                    @Html.TextBoxFor(model => model.cap, new { @class = "form-control", required = "Required", @placeholder = "Enter Capcha Code", @maxlength = "6" })
-
-                </div>
-            </div>
             <input type="submit" name="" value="Login">
             <div class="form-group" style=" color: white">
                 @ViewBag.msg
